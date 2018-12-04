@@ -1,4 +1,4 @@
-# **Personnal-Website-V3**
+# **Personnal website | Version 3 |**
 The 3rd Version of my personnal Website.
 ___
 
