@@ -1,0 +1,25 @@
+header{
+  height: 60vh;
+  width: 100%;
+  background-color: #ee86a0;
+}
+
+.titleContainer{
+  position: absolute;
+  font-size: 3em;
+  margin-left: 8%;
+  margin-top: 12%;
+}
+
+#menu{
+  height: 4vh;
+  width: 100%;
+  background-color: #b1de06;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+#menu a{
+  text-decoration: none;
+  color: #000;
+}
