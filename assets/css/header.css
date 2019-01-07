@@ -1,25 +1,75 @@
+@font-face {
+  font-family: 'calvier';
+  src: url("../fonts/calvier.ttf");
+}
 header{
   height: 60vh;
   width: 100%;
-  background-color: #ee86a0;
+  background-image: url("../images/header/header1.png");
 }
 
 .titleContainer{
+  color: white;
   position: absolute;
   font-size: 3em;
   margin-left: 8%;
   margin-top: 12%;
 }
-
-#menu{
-  height: 4vh;
-  width: 100%;
-  background-color: #b1de06;
-  text-align: center;
-  font-size: 1.8em;
+.boxedHeader{
+  font-family: calvier;
+  position: relative;
+}
+.boxedHeader:after{
+  content: '';
+  position: absolute;
+  border-left: 5px solid tomato;
+  left: -10px;
+  bottom: 0;
+  top: 100%;
+  transition: .3s;
+}
+.boxedHeader:hover:after{
+  top: 0;
 }
 
-#menu a{
+#menu{
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #282c34;
+  position: sticky;
+  top: 0;
+}
+#menu li{
+  float: left;
+}
+#menu li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  color: #000;
+  font-size: 20px;
+}
+#menu a:hover{
+  background-color: #111;
+}
+.underlinedMenu{
+  position: relative;
+}
+.underlinedMenu:after{
+  content: '';
+  position: absolute;
+  border-bottom: 3px solid tomato;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  transition: .3s;
+}
+.underlinedMenu:hover:after{
+  right: 0;
+}
+.logoInMenu{
+  max-width: 48px;
+  max-height: 48px;
+  margin-right: 20px;;
 }

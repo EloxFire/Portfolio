@@ -1,0 +1,104 @@
+#projects{
+  min-height: 60vh;
+  width: 100%;
+}
+#projects h3{
+  font-size: 30px;
+}
+#projects p{
+  font-size: 25px;
+  margin-top: 5px;
+  color: #282c34;
+}
+#projects a{
+  text-decoration: none;
+  color: #000;
+}
+#projects a:hover{
+  text-decoration: underline;
+}
+
+.intro{
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+#filtersButtonContainer{
+  background-color: #282c34;
+  height: auto;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+
+.btnFilter {
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 14px 16px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btnFilter:hover {
+  background-color: #111;
+}
+.filterContainer{
+  margin-left: 20px;
+}
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.less{
+  height: auto;
+  width: 15%;
+  text-align: center;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  border: 2px solid #282c34;
+  display: none;
+}
+.more{
+  height: auto;
+  width: 40%;
+  text-align: center;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  border: 2px solid #282c34;
+  /* display: none; */
+}
+
+.separatorCard{
+  height: .1vh;
+  background-color: black;
+  width: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.seeMore{
+  position: relative;
+  font-size: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.seeMore:after{
+  content: '';
+  position: absolute;
+  border-bottom: 3px solid tomato;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  transition: .3s;
+}
+.seeMore:hover:after{
+  right: 30%;
+  left: 30%;
+}
+
+.show {
+  display: block;
+}

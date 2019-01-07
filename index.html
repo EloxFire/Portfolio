@@ -2,20 +2,212 @@
 <html lang="fr" dir="ltr">
   <head>
     <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/scroll.js"></script>
+    <script type="text/javascript" src="assets/js/filterScript.js"></script>
+    <script type="text/javascript" src="assets/js/detailsScript.js"></script>
     <meta charset="utf-8">
     <title>Enzo Avagliano - Homepage.</title>
   </head>
-  <body>
+  <body onload="filterSelection('all')">
     <header>
       <div class="titleContainer">
-        <h1>Welcome.</h1>
+        <h1 class="boxedHeader">Welcome.</h1>
       </div>
     </header>
-    <section id="menu">
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Softwares</a>
-      <a href="#">Social</a>
+    <ul id="menu">
+      <li><a class="underlinedMenu" href="#about">About</a></li>
+      <li><a class="underlinedMenu" href="#projects">Projects</a></li>
+      <li><a class="underlinedMenu" href="#softwares">Softwares</a></li>
+      <li><a class="underlinedMenu" href="#social">Social</a></li>
+      <li style="float:right"><img class="logoInMenu" src="assets/images/logo.png" alt="Logo Enzo Avagliano"></li>
+    </ul>
+
+    <section id="about">
+      <h1 class="sectionTitle">About me.</h1>
+      <div class="separator"></div>
+
+      <div class="personalInfos">
+        <h3>some personal infos :</h3>
+        <p>
+          Hi !<br>
+          My name's Enzo Avagliano, I'm 18 years old and I'm a computer engineering student in first year at <a href="https://www.ynov-aix.fr/" target="_blank">Ynov Aix-En-Provence</a><br>
+          I live in the little (but lovely) town of <a href="https://fr.wikipedia.org/wiki/Saint-Cannat" target="_blank">Saint-Cannat</a>, near <a href="https://fr.wikipedia.org/wiki/Aix-en-Provence" target="_blank">Aix-En-Provence.</a>
+          As for my passions, I'm in love with atronomy, and all that is in relation to the space in general, obviously, computing take also a big part of my life.<br>
+          If I had to make a graphic of my passion, here are the corresponding percentages :<br>
+          Astronomy : 25%<br>
+          Computing : 25%<br>
+          But, this doesn't make 100%... Yeah the fifty percent that remains are here :<br>
+          Friendship : 50%.
+        </p>
+        <div class="additionalNotes">
+          <p>These three poles are the engines and the pillars, which make me who I am.</p>
+        </div>
+      </div>
+
+      <div class="professionalInfos">
+        <h3>some professional infos :</h3>
+        <p>
+          As I said earlier, I am a first year computer engineering student, but the truth is that I started studying development 3 years ago doing totally random things in java for a famous game named <a href="https://minecraft.net/fr-fr/" target="_blank"> Minecraft. </a>
+          I do not know if you know :)<br>
+          Now, i have some projects, which are curently under development, you'll be able to see them in the next section , right after that !
+        </p>
+        <div class="additionalNotes">
+          <p>You can find a link to my portfolio in the <a href="#social">social section</a> down bellow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h1 class="sectionTitle">Projects.</h1>
+      <div class="separator"></div>
+
+      <div class="intro">
+        <p>
+          Yes, since I started to code, I did several projects, which are for some completed and for the other in a "paused" statut.<br>
+          Here, you got a list and the details of those projects.
+        </p>
+      </div>
+
+      <div class="filterContainer">
+        <p>Filter projects by :</p>
+        <div id="filtersButtonContainer">
+          <button class="btnFilter underlinedMenu" onclick="filterSelection('all')">Show all</button>
+          <button class="btnFilter underlinedMenu" onclick="filterSelection('java')">Java</button>
+          <button class="btnFilter underlinedMenu" onclick="filterSelection('cProject')">C/C#/C++</button>
+          <button class="btnFilter underlinedMenu" onclick="filterSelection('html')">HTML/CSS</button>
+          <button class="btnFilter underlinedMenu" onclick="filterSelection('arduino')">Arduino</button>
+          <button class="btnFilter underlinedMenu" onclick="filterSelection('processing')">Processing</button>
+        </div>
+      </div>
+
+      <div class="container">
+
+        <div class="filterDiv java tdk less">
+          <h3>Terre du Kill</h3>
+          <div class="separatorCard"></div>
+          <p>
+            Project type :<br>
+            MiniGame<br>
+            Language :<br>
+            Java<br>
+            Application :<br>
+            In-game modifications
+          </p>
+          <div class="separatorCard"></div>
+          <p onclick="seeMore('tdk')" class="seeMore">See more</p>
+        </div>
+
+        <div class="filterDiv arduino cuitepates less">
+          <h3>Cuitépâtes</h3>
+          <div class="separatorCard"></div>
+          <p>
+            Project type :<br>
+            Utils<br>
+            Language :<br>
+            Arduino<br>
+            Application :<br>
+            Life simplification
+          </p>
+          <div class="separatorCard"></div>
+          <p class="seeMore">See more</p>
+        </div>
+
+        <div class="filterDiv arduino lockit less">
+          <h3>Lock!t</h3>
+          <div class="separatorCard"></div>
+          <p>
+            Project type :<br>
+            Utils<br>
+            Language :<br>
+            Arduino/MIT app inventor<br>
+            Application :<br>
+            Life simplification
+          </p>
+          <div class="separatorCard"></div>
+          <p class="seeMore">See more</p>
+        </div>
+
+        <div class="filterDiv processing snake less">
+          <h3>Snake</h3>
+          <div class="separatorCard"></div>
+          <p>
+            Project type :<br>
+            Game<br>
+            Language :<br>
+            Processing<br>
+            Application :<br>
+            Remake the mobile game Snake
+          </p>
+          <div class="separatorCard"></div>
+          <p class="seeMore">See more</p>
+        </div>
+
+        <div class="filterDiv processing systemexe less">
+          <h3>System.exe</h3>
+          <div class="separatorCard"></div>
+          <p>
+            Project type :<br>
+            Game<br>
+            Language :<br>
+            Processing<br>
+            Application :<br>
+            'Asteroid' like 2D game
+          </p>
+          <div class="separatorCard"></div>
+          <p class="seeMore">See more</p>
+        </div>
+
+        <div class="filterDiv html website less">
+          <h3>My Website</h3>
+          <div class="separatorCard"></div>
+          <p>
+            Project type :<br>
+            Website<br>
+            Language :<br>
+            HTML/CSS/JS<br>
+            Application :<br>
+            Visibility
+          </p>
+          <div class="separatorCard"></div>
+          <p class="seeMore">See more</p>
+        </div>
+
+        <div class="filterDiv html portfolio less">
+          <h3>My Portfolio</h3>
+          <div class="separatorCard"></div>
+          <p>
+            Project type :<br>
+            Website<br>
+            Language :<br>
+            HTML/CSS/JS<br>
+            Application :<br>
+            professional visibility
+          </p>
+          <div class="separatorCard"></div>
+          <p class="seeMore">See more</p>
+        </div>
+
+        <div class="filterDiv cProject wordscramble less">
+          <h3>Word scramble</h3>
+          <div class="separatorCard"></div>
+          <p>
+            Project type :<br>
+            Console application<br>
+            Language :<br>
+            C<br>
+            Application :<br>
+            Fun
+          </p>
+          <div class="separatorCard"></div>
+          <p class="seeMore">See more</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="softawre">
+      <h1 class="sectionTitle">Softwares.</h1>
+      <div class="separator"></div>
     </section>
 
   </body>

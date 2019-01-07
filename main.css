@@ -1,7 +1,25 @@
 @import "assets/css/header.css";
+@import "assets/css/indexAbout.css";
+@import "assets/css/indexProjects.css";
 
-body, h1, h2, p, section{
+@font-face {
+  font-family: 'bebas';
+  src: url("assets/fonts/bebas.ttf");
+}
+@font-face {
+  font-family: 'Calvier';
+  src: url("assets/fonts/calvier.ttf");
+}
+
+body, h1, h2, h3, h4, p, section, ul, li, a, button{
   margin: 0;
   padding: 0;
-  font-family: monospace;
+  font-family: bebas;
+}
+
+.sectionTitle{
+  font-family: calvier;
+  font-size: 60px;
+  margin-left: 20px;
+  margin-top: 30px;
 }

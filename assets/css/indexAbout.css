@@ -1,0 +1,83 @@
+#about{
+  height: 130vh;;
+  width: 100%;
+}
+#about h3{
+  margin-left: 30px;
+  font-size: 30px;
+}
+#about p{
+  font-size: 25px;
+  margin-left: 30px;
+  margin-top: 5px;
+  color: #282c34;
+}
+#about a{
+  text-decoration: none;
+  color: #000;
+}
+#about a:hover{
+  text-decoration: underline;
+}
+.personalInfos{
+  height: auto;
+  width: 30%;
+  left: 15%;
+  text-align: justify;
+  text-justify: inter-word;
+  position: relative;
+  margin-bottom: 30px;
+}
+.personalInfos:after{
+  content: '';
+  position: absolute;
+  border-left: 5px solid tomato;
+  left: 10px;
+  bottom: 100%;
+  top: 0;
+  transition: .3s;
+}
+.personalInfos:hover:after{
+  bottom: 0;
+}
+
+.professionalInfos{
+  height: auto;
+  width: 30%;
+  float: right;
+  right: 15%;
+  text-align: justify;
+  text-justify: inter-word;
+  position: relative;
+  margin-bottom: 30px;
+}
+.professionalInfos:after{
+  content: '';
+  position: absolute;
+  border-right: 5px solid tomato;
+  right: -20px;
+  bottom: 100%;
+  top: 0;
+  transition: .3s;
+}
+.professionalInfos:hover:after{
+  bottom: 0;
+}
+.professionalInfos h3{
+  text-align: right;
+}
+
+.personalInfos, .professionalInfos{
+  margin-bottom: 5%;
+}
+.additionalNotes{
+  text-align: center;
+}
+
+.separator{
+  height: .2vh;
+  background-color: black;
+  width: 60vw;
+  margin-left: 20px;
+  margin-bottom: 5%;
+}
