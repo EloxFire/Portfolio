@@ -8,23 +8,43 @@
 #social p{
   font-size: 25px;
   margin-top: 5px;
-  margin-left: 20px;
   color: #282c34;
 }
 #social a{
   text-decoration: none;
   color: #000;
 }
-#social a:hover{
-  text-decoration: underline;
-}
 
-.socialImgContainer img{
-  max-width: 150px;
-  max-height: 150px;
+.mediaContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.twitter a{
-  height: 120px;
-  width: 120px;
-  background-image: url("../images/social/Twitter.png");
+.mediaCard{
+  margin: 30px;
+  text-align: center;
+  height: 30vh;
+  width: 15%;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+.mediaCard h1{
+  position: relative;
+}
+.mediaCard h1:after{
+  content: '';
+  position: absolute;
+  border-bottom: 3px solid tomato;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  transition: .3s;
+}
+.mediaCard h1:hover:after{
+  right: 30%;
+  left: 30%;
+}
+.mediaImg{
+  max-width: 8em;
+  max-height: 8em;
 }
