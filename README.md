@@ -1,6 +1,6 @@
 # README
 
-## Personal website - Current Version : 3.0.1 - Total overhaul
+## Personal website - Current Version : 3.0.2 - Sections !
 
 - Goal :
     - Create my personal website to be able to share a little more infos about me.
@@ -9,6 +9,16 @@
 
 ___
 ## **Logs : What have changed ?!**
+
+### **UPDATE 3.0.2**
+1] Softawre section is here ! And nearly complete.
+
+2] Social section has been added, and will be completed in the next update.
+
+3] The filter bar was remake. She's still under development.
+
+4] Minors changes... (Removing scroll bar visibility...)
+
 
 ### **UPDATE 3.0.1**
 1] Total design overhaul, adding animations on text hover, etc...
