@@ -1,6 +1,6 @@
 # README
 
-## Personal website - Current Version : 3.0.2 - Sections !
+## Personal website - Current Version : 3.0.3 - Sections [Part 2] !
 
 - Goal :
     - Create my personal website to be able to share a little more infos about me.
@@ -9,6 +9,10 @@
 
 ___
 ## **Logs : What have changed ?!**
+
+### **UPDATE 3.0.3**
+1] Social section has been filed and completed.
+
 
 ### **UPDATE 3.0.2**
 1] Softawre section is here ! And nearly complete.
