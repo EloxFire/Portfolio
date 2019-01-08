@@ -18,7 +18,7 @@
     <ul id="menu">
       <li><a class="underlinedMenu" href="#about">About</a></li>
       <li><a class="underlinedMenu" href="#projects">Projects</a></li>
-      <li><a class="underlinedMenu" href="#softwares">Softwares</a></li>
+      <li><a class="underlinedMenu" href="#software">Softwares</a></li>
       <li><a class="underlinedMenu" href="#social">Social</a></li>
       <li style="float:right"><img class="logoInMenu" src="assets/images/logo.png" alt="Logo Enzo Avagliano"></li>
     </ul>
@@ -48,7 +48,7 @@
       <div class="professionalInfos">
         <h3>some professional infos :</h3>
         <p>
-          As I said earlier, I am a first year computer engineering student, but the truth is that I started studying development 3 years ago doing totally random things in java for a famous game named <a href="https://minecraft.net/fr-fr/" target="_blank"> Minecraft. </a>
+          As I said earlier, I am a first year computer engineering student, but the truth is that I started studying development 3 years ago doing totally random things in java for a famous game named <a href="https://minecraft.net/fr-fr/" target="_blank"> Minecraft</a>.
           I do not know if you know :)<br>
           Now, i have some projects, which are curently under development, you'll be able to see them in the next section , right after that !
         </p>
@@ -70,14 +70,15 @@
       </div>
 
       <div class="filterContainer">
-        <p>Filter projects by :</p>
+        <h1 class="secondSectionTitle">Filter projects by :</h1>
+        <div class="separatorSecond"></div>
         <div id="filtersButtonContainer">
-          <button class="btnFilter underlinedMenu" onclick="filterSelection('all')">Show all</button>
-          <button class="btnFilter underlinedMenu" onclick="filterSelection('java')">Java</button>
-          <button class="btnFilter underlinedMenu" onclick="filterSelection('cProject')">C/C#/C++</button>
-          <button class="btnFilter underlinedMenu" onclick="filterSelection('html')">HTML/CSS</button>
-          <button class="btnFilter underlinedMenu" onclick="filterSelection('arduino')">Arduino</button>
-          <button class="btnFilter underlinedMenu" onclick="filterSelection('processing')">Processing</button>
+          <a href="#projects" class="btnFilter" onclick="filterSelection('all')">Show all</a>
+          <a href="#projects" class="btnFilter" onclick="filterSelection('java')">Java</a>
+          <a href="#projects" class="btnFilter" onclick="filterSelection('cProject')">C/C#/C++</a>
+          <a href="#projects" class="btnFilter" onclick="filterSelection('html')">HTML/CSS</a>
+          <a href="#projects" class="btnFilter" onclick="filterSelection('arduino')">Arduino</a>
+          <a href="#projects" class="btnFilter" onclick="filterSelection('processing')">Processing</a>
         </div>
       </div>
 
@@ -205,10 +206,83 @@
       </div>
     </section>
 
-    <section id="softawre">
+    <section id="software">
       <h1 class="sectionTitle">Softwares.</h1>
       <div class="separator"></div>
+
+      <div class="intro">
+        <p>
+          This section is a bit different from the other, here you'll find a list of all the softwares I use daily.
+        </p>
+      </div>
+
+      <div class="softwaresContainer">
+        <div class="softwareCard">
+          <img src="assets/images/atom.png" class="softwareImg">
+          <div class="separatorCard"></div>
+
+          <h1>Atom Editor</h1>
+          <p>
+            The most beautiful and powerfull software in THE ENTIRE WORLD.
+          </p>
+        </div>
+        <div class="softwareCard">
+          <img src="assets/images/github.png" class="softwareImg">
+          <div class="separatorCard"></div>
+
+          <h1>GitHub</h1>
+          <p>
+            Very cool, very easy to use, very everything.
+          </p>
+        </div>
+        <div class="softwareCard">
+          <img src="assets/images/google.png" class="softwareImg">
+          <div class="separatorCard"></div>
+
+          <h1>Google</h1>
+          <p>
+            Yes, because I don't know everything !
+          </p>
+        </div>
+      </div>
+
+      <div class="secondSectionTitle">GitHub</div>
+      <div class="separatorSecond"></div>
+      <p>
+        GitHub Inc. is a web-based hosting service for version control using Git. It is mostly used for computer code. It offers all of the distributed version control and source code management
+      </p>
+
+      <div class="secondSectionTitle">Atom Editor</div>
+      <div class="separatorSecond"></div>
+      <p>
+        Atom is a free and open-source text and source code editor for macOS, Linux, and Microsoft Windows with support for plug-ins written in Node.js, and embedded Git Control, developed by GitHub.
+      </p>
+
+      <div class="secondSectionTitle">Google</div>
+      <div class="separatorSecond"></div>
+      <p>
+        Well Google...
+      </p>
     </section>
+
+    <section id="social">
+      <h1 class="sectionTitle">Social.</h1>
+      <div class="separator"></div>
+
+      <div class="socialImgContainer">
+        <!-- <img src="assets/images/social/Twitter.png">
+        <a href="#"></a>
+        <a href="#"><img src="assets/images/social/Discord.png"></a>
+        <a href="#"><img src="assets/images/social/Youtube.png"></a>
+        <a href="#"><img src="assets/images/social/Github.png"></a>
+        <a href="#"><img src="assets/images/social/Instagram.png"></a> -->
+      </div>
+    </section>
+
+    <footer>
+      <hr>
+      <p>&copy; Enzo Avagliano | 2018 | All Right Reserved</p>
+    </footer>
 
   </body>
 </html>

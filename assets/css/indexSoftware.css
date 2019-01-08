@@ -1,0 +1,54 @@
+#software{
+  min-height: 60vh;
+  width: 100%;
+}
+#software h3{
+  font-size: 30px;
+}
+#software p{
+  font-size: 25px;
+  margin-top: 5px;
+  margin-left: 20px;
+  color: #282c34;
+}
+#software a{
+  text-decoration: none;
+  color: #000;
+}
+#software a:hover{
+  text-decoration: underline;
+}
+
+.softwaresContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.softwareCard{
+  margin: 30px;
+  text-align: center;
+  height: 30vh;
+  width: 15%;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+.softwareCard h1{
+  position: relative;
+}
+.softwareCard h1:after{
+  content: '';
+  position: absolute;
+  border-bottom: 3px solid tomato;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  transition: .3s;
+}
+.softwareCard h1:hover:after{
+  right: 30%;
+  left: 30%;
+}
+.softwareImg{
+  max-width: 8em;
+  max-height: 8em;
+}

@@ -23,24 +23,34 @@
   margin-left: 20px;
 }
 #filtersButtonContainer{
-  background-color: #282c34;
-  height: auto;
-  width: 50%;
+  margin-top: 20px;
+  width: 29.8vw;
+  height: 6vh;
   margin-bottom: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 
 .btnFilter {
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 20px;
-  padding: 14px 16px;
-  background-color: transparent;
+  color: #000;
+  font-size: 25px;
+  padding: 10px;
   cursor: pointer;
+  text-decoration: none;
+  position: relative;
 }
-.btnFilter:hover {
-  background-color: #111;
+.btnFilter:after{
+  content: '';
+  position: absolute;
+  border-left: 1px solid black;
+  left: 0;
+  bottom: 0;
+  top: 100%;
+  transition: .3s;
+}
+.btnFilter:hover:after{
+  top: 0;
 }
 .filterContainer{
   margin-left: 20px;
@@ -59,6 +69,7 @@
   margin-left: 20px;
   margin-bottom: 30px;
   border: 2px solid #282c34;
+  border-radius: 5px;
   display: none;
 }
 .more{
@@ -68,15 +79,8 @@
   margin-left: 20px;
   margin-bottom: 30px;
   border: 2px solid #282c34;
+  border-radius: 5px;
   /* display: none; */
-}
-
-.separatorCard{
-  height: .1vh;
-  background-color: black;
-  width: 50%;
-  margin-left: 50%;
-  transform: translateX(-50%);
 }
 
 .seeMore{

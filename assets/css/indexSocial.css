@@ -1,0 +1,30 @@
+#social{
+  min-height: 60vh;
+  width: 100%;
+}
+#social h3{
+  font-size: 30px;
+}
+#social p{
+  font-size: 25px;
+  margin-top: 5px;
+  margin-left: 20px;
+  color: #282c34;
+}
+#social a{
+  text-decoration: none;
+  color: #000;
+}
+#social a:hover{
+  text-decoration: underline;
+}
+
+.socialImgContainer img{
+  max-width: 150px;
+  max-height: 150px;
+}
+.twitter a{
+  height: 120px;
+  width: 120px;
+  background-image: url("../images/social/Twitter.png");
+}

@@ -33,6 +33,7 @@ header{
 }
 
 #menu{
+  z-index: 10;
   list-style-type: none;
   overflow: hidden;
   background-color: #282c34;
