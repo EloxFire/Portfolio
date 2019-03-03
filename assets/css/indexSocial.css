@@ -48,3 +48,12 @@
   max-width: 8em;
   max-height: 8em;
 }
+
+.download{
+  margin-right: 20px;
+}
+.downloadButton{
+  font-size: 24px;
+  border: 2px solid black;
+  margin-left: 20px;
+}

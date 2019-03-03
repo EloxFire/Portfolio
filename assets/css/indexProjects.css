@@ -10,11 +10,11 @@
   margin-top: 5px;
   color: #282c34;
 }
-#projects a{
+#projects .filterContainer a{
   text-decoration: none;
   color: #000;
 }
-#projects a:hover{
+#projects .filterContainer a:hover{
   text-decoration: underline;
 }
 
@@ -40,18 +40,6 @@
   text-decoration: none;
   position: relative;
 }
-.btnFilter:after{
-  content: '';
-  position: absolute;
-  border-left: 1px solid black;
-  left: 0;
-  bottom: 0;
-  top: 100%;
-  transition: .3s;
-}
-.btnFilter:hover:after{
-  top: 0;
-}
 .filterContainer{
   margin-left: 20px;
 }
@@ -72,16 +60,6 @@
   border-radius: 5px;
   display: none;
 }
-.more{
-  height: auto;
-  width: 40%;
-  text-align: center;
-  margin-left: 20px;
-  margin-bottom: 30px;
-  border: 2px solid #282c34;
-  border-radius: 5px;
-  /* display: none; */
-}
 
 .seeMore{
   position: relative;
@@ -101,6 +79,10 @@
 .seeMore:hover:after{
   right: 30%;
   left: 30%;
+}
+.seeMore a{
+  text-decoration: none;
+  color: #282c34;
 }
 
 .show {

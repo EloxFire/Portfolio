@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -52,9 +52,6 @@
           I do not know if you know :)<br>
           Now, i have some projects, which are curently under development, you'll be able to see them in the next section , right after that !
         </p>
-        <div class="additionalNotes">
-          <p>You can find a link to my portfolio in the <a href="#social">social section</a> down bellow.</p>
-        </div>
       </div>
     </section>
 
@@ -73,12 +70,12 @@
         <h1 class="secondSectionTitle">Filter projects by :</h1>
         <div class="separatorSecond"></div>
         <div id="filtersButtonContainer">
-          <a href="#projects" class="btnFilter" onclick="filterSelection('all')">Show all</a>
-          <a href="#projects" class="btnFilter" onclick="filterSelection('java')">Java</a>
-          <a href="#projects" class="btnFilter" onclick="filterSelection('cProject')">C/C#/C++</a>
-          <a href="#projects" class="btnFilter" onclick="filterSelection('html')">HTML/CSS</a>
-          <a href="#projects" class="btnFilter" onclick="filterSelection('arduino')">Arduino</a>
-          <a href="#projects" class="btnFilter" onclick="filterSelection('processing')">Processing</a>
+          <a class="btnFilter" onclick="filterSelection('all')">Show all</a>
+          <a class="btnFilter" onclick="filterSelection('java')">Java</a>
+          <a class="btnFilter" onclick="filterSelection('cProject')">C/C#/C++</a>
+          <a class="btnFilter" onclick="filterSelection('html')">HTML/CSS</a>
+          <a class="btnFilter" onclick="filterSelection('arduino')">Arduino</a>
+          <a class="btnFilter" onclick="filterSelection('processing')">Processing</a>
         </div>
       </div>
 
@@ -96,7 +93,7 @@
             In-game modifications
           </p>
           <div class="separatorCard"></div>
-          <p onclick="seeMore('tdk')" class="seeMore">See more</p>
+          <p class="seeMore"><a href="tdk.html">See more</a></p>
         </div>
 
         <div class="filterDiv arduino cuitepates less">
@@ -111,7 +108,7 @@
             Life simplification
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore">See more</p>
+          <p class="seeMore"><a href="cuitepates.html">See more</a></p>
         </div>
 
         <div class="filterDiv arduino lockit less">
@@ -126,7 +123,7 @@
             Life simplification
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore">See more</p>
+          <p class="seeMore"><a href="lockit.html">See more</a></p>
         </div>
 
         <div class="filterDiv processing snake less">
@@ -141,7 +138,7 @@
             Remake the mobile game Snake
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore">See more</p>
+          <p class="seeMore"><a href="snake.html">See more</a></p>
         </div>
 
         <div class="filterDiv processing systemexe less">
@@ -156,10 +153,10 @@
             'Asteroid' like 2D game
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore">See more</p>
+          <p class="seeMore"><a href="system.html">See more</a></p>
         </div>
 
-        <div class="filterDiv html website less">
+        <!-- <div class="filterDiv html website less">
           <h3>My Website</h3>
           <div class="separatorCard"></div>
           <p>
@@ -171,8 +168,8 @@
             Visibility
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore">See more</p>
-        </div>
+          <p class="seeMore"><a href="website.html">See more</a></p>
+        </div> -->
 
         <div class="filterDiv html portfolio less">
           <h3>My Portfolio</h3>
@@ -186,10 +183,10 @@
             professional visibility
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore">See more</p>
+          <p class="seeMore"><a href="portfolio.html">See more</a></p>
         </div>
 
-        <div class="filterDiv cProject wordscramble less">
+        <!-- <div class="filterDiv cProject wordscramble less">
           <h3>Word scramble</h3>
           <div class="separatorCard"></div>
           <p>
@@ -201,8 +198,8 @@
             Fun
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore">See more</p>
-        </div>
+          <p class="seeMore"><a href="ws.html">See more</a></p>
+        </div> -->
       </div>
     </section>
 
@@ -300,17 +297,26 @@
           <p>Link to my Github page, where I post some code and projects.</p>
         </div>
 
-        <div class="mediaCard">
+        <!-- <div class="mediaCard">
           <a href="https://www.instagram.com/enzo_avagliano/" target="_blank"><img src="assets/images/Social/Instagram.png" class="mediaImg"></a>
           <div class="separatorCard"></div>
           <h1>Instagram</h1>
           <p>Not a very active account but sometimes I show myself.</p>
+        </div> -->
+
+        <div class="download">
+          <div class="secondSectionTitle">Curriculum vitae</div>
+          <div class="separatorSecond"></div>
+          <p class="intro">
+            Also, you can download my cv, by clicking the button right under this text.
+          </p>
+          <button class="downloadButton"><a href="assets/images/cv.png" download="Curriculum_Vitae_Enzo_Avagliano">Download my CV</a></button>
         </div>
     </section>
 
     <footer>
       <hr>
-      <p>&copy; Enzo Avagliano | 2018 | All Right Reserved</p>
+      <p>&copy; Enzo Avagliano | 2019 | All Right Reserved</p>
     </footer>
 
   </body>

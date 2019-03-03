@@ -1,0 +1,89 @@
+.htdk{
+  height: 60vh;
+  width: 100%;
+  background-image: url("../images/projects/tdkHeader.png");
+}
+.hsystem{
+  height: 60vh;
+  width: 100%;
+  background-image: url("../images/projects/systemHeader.png");
+}
+.hcuitepates{
+  height: 60vh;
+  width: 100%;
+  background-image: url("../images/projects/cuitepatesHeader.png");
+}
+.hlockit{
+  height: 60vh;
+  width: 100%;
+  background-image: url("../images/projects/lockitHeader.png");
+}
+.hlockit h1{
+  color: #282c34;
+}
+.hsnake{
+  height: 60vh;
+  width: 100%;
+  background-image: url("../images/projects/snakeHeader.png");
+}
+.hsnake h1{
+  color: #282c34;
+}
+/* .hwebsite{
+  height: 60vh;
+  width: 100%;
+  background-image: url("../images/projects/websiteHeader.png");
+} */
+.hportfolio{
+  height: 60vh;
+  width: 100%;
+  background-image: url("../images/header/header1.png");
+}
+/* .hws{
+  height: 60vh;
+  width: 100%;
+  background-image: url("../images/projects/wsHeader.png");
+} */
+
+.titleContainer{
+  color: white;
+  position: absolute;
+  font-size: 3em;
+  margin-left: 8%;
+  margin-top: 12%;
+}
+.boxedHeader{
+  font-family: calvier;
+  position: relative;
+}
+.boxedHeader:after{
+  content: '';
+  position: absolute;
+  border-left: 5px solid tomato;
+  left: -10px;
+  bottom: 0;
+  top: 100%;
+  transition: .3s;
+}
+.boxedHeader:hover:after{
+  top: 0;
+}
+
+.text{
+  font-size: 25px;
+  height: auto;
+  width: 100%;
+  left: 20px;
+  position: relative;
+  margin-bottom: 30px;
+  margin-right: 20px ;
+}
+
+.video{
+  position: relative;
+  margin-left: 50%;
+  transform: translateX(-30%);
+}
+.screens{
+  text-align: center;
+}
