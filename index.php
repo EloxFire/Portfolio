@@ -15,13 +15,8 @@
         <h1 class="boxedHeader">Welcome.</h1>
       </div>
     </header>
-    <ul id="menu">
-      <li><a class="underlinedMenu" href="#about">About</a></li>
-      <li><a class="underlinedMenu" href="#projects">Projects</a></li>
-      <li><a class="underlinedMenu" href="#software">Softwares</a></li>
-      <li><a class="underlinedMenu" href="#social">Social</a></li>
-      <li style="float:right"><img class="logoInMenu" src="assets/images/logo.png" alt="Logo Enzo Avagliano"></li>
-    </ul>
+
+    <?php include 'assets/php/menu.php' ?>
 
     <section id="about">
       <h1 class="sectionTitle">About me.</h1>
@@ -80,7 +75,6 @@
       </div>
 
       <div class="container">
-
         <div class="filterDiv java tdk less">
           <h3>Terre du Kill</h3>
           <div class="separatorCard"></div>
@@ -93,9 +87,8 @@
             In-game modifications
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="tdk.html">See more</a></p>
+          <p class="seeMore"><a href="tdk.php">See more</a></p>
         </div>
-
         <div class="filterDiv arduino cuitepates less">
           <h3>Cuitépâtes</h3>
           <div class="separatorCard"></div>
@@ -108,7 +101,7 @@
             Life simplification
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="cuitepates.html">See more</a></p>
+          <p class="seeMore"><a href="cuitepates.php">See more</a></p>
         </div>
 
         <div class="filterDiv arduino lockit less">
@@ -123,7 +116,7 @@
             Life simplification
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="lockit.html">See more</a></p>
+          <p class="seeMore"><a href="lockit.php">See more</a></p>
         </div>
 
         <div class="filterDiv processing snake less">
@@ -138,7 +131,7 @@
             Remake the mobile game Snake
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="snake.html">See more</a></p>
+          <p class="seeMore"><a href="snake.php">See more</a></p>
         </div>
 
         <div class="filterDiv processing systemexe less">
@@ -153,24 +146,8 @@
             'Asteroid' like 2D game
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="system.html">See more</a></p>
+          <p class="seeMore"><a href="system.php">See more</a></p>
         </div>
-
-        <!-- <div class="filterDiv html website less">
-          <h3>My Website</h3>
-          <div class="separatorCard"></div>
-          <p>
-            Project type :<br>
-            Website<br>
-            Language :<br>
-            HTML/CSS/JS<br>
-            Application :<br>
-            Visibility
-          </p>
-          <div class="separatorCard"></div>
-          <p class="seeMore"><a href="website.html">See more</a></p>
-        </div> -->
-
         <div class="filterDiv html portfolio less">
           <h3>My Portfolio</h3>
           <div class="separatorCard"></div>
@@ -183,23 +160,8 @@
             professional visibility
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="portfolio.html">See more</a></p>
+          <p class="seeMore"><a href="portfolio.php">See more</a></p>
         </div>
-
-        <!-- <div class="filterDiv cProject wordscramble less">
-          <h3>Word scramble</h3>
-          <div class="separatorCard"></div>
-          <p>
-            Project type :<br>
-            Console application<br>
-            Language :<br>
-            C<br>
-            Application :<br>
-            Fun
-          </p>
-          <div class="separatorCard"></div>
-          <p class="seeMore"><a href="ws.html">See more</a></p>
-        </div> -->
       </div>
     </section>
 
@@ -297,13 +259,6 @@
           <p>Link to my Github page, where I post some code and projects.</p>
         </div>
 
-        <!-- <div class="mediaCard">
-          <a href="https://www.instagram.com/enzo_avagliano/" target="_blank"><img src="assets/images/Social/Instagram.png" class="mediaImg"></a>
-          <div class="separatorCard"></div>
-          <h1>Instagram</h1>
-          <p>Not a very active account but sometimes I show myself.</p>
-        </div> -->
-
         <div class="download">
           <div class="secondSectionTitle">Curriculum vitae</div>
           <div class="separatorSecond"></div>
@@ -314,10 +269,7 @@
         </div>
     </section>
 
-    <footer>
-      <hr>
-      <p>&copy; Enzo Avagliano | 2019 | All Right Reserved</p>
-    </footer>
+    <?php include 'assets/php/footer.php' ?>
 
   </body>
 </html>

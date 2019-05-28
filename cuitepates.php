@@ -15,10 +15,7 @@
       </div>
     </header>
 
-    <ul id="menu">
-      <li><a class="underlinedMenu" href="index.html">Main page</a></li>
-      <li style="float:right"><img class="logoInMenu" src="assets/images/logo.png" alt="Logo Enzo Avagliano"></li>
-    </ul>
+    <?php include 'assets/php/menuProjects.php' ?>
 
     <section id="tdkAbout">
       <h1 class="secondSectionTitle">Project description :</h1>
@@ -58,10 +55,7 @@
       </div>
     </section>
 
-    <footer>
-      <hr>
-      <p>&copy; Enzo Avagliano | 2019 | All Right Reserved</p>
-    </footer>
+    <?php include 'assets/php/footer.php' ?>
 
   </body>
 </html>

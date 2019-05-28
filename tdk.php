@@ -62,10 +62,7 @@
       </div>
     </section>
 
-    <footer>
-      <hr>
-      <p>&copy; Enzo Avagliano | 2019 | All Right Reserved</p>
-    </footer>
+    <?php include 'assets/php/footer.php' ?>
 
   </body>
 </html>

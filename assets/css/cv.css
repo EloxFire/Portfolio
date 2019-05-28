@@ -1,0 +1,91 @@
+/*#B52F17 text*/
+/*#DB875F BG*/
+@font-face {
+  font-family: 'bebas';
+  src: url("assets/fonts/bebas.ttf");
+}
+@font-face {
+  font-family: 'Calvier';
+  src: url("assets/fonts/calvier.ttf");
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+#cvContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+#left{
+  height: 94vh;
+  width: 30vw;
+  background-color: #DB875F;
+}
+.presContainer{
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.titleContainerCV{
+  display: block;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.nameTitle{
+  font-size: 3em;
+  letter-spacing: 2px;
+  color: #B52F17;
+}
+
+.statusTitle{
+  font-size: 1.5em;;
+  letter-spacing: 2px;
+  color: #B52F17;
+}
+
+.presContainer img{
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.competences{
+  display: flex;
+  margin-left: 20px;
+  flex-direction: column;
+}
+.competences p{
+  color: #B52F17;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+}
+.general, .languages{
+  margin-top: 4vh;
+  color: #282c34;
+}
+
+progress[value]{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 20px;
+
+}
+progress[value]::-webkit-progress-bar{
+  border-radius: 10px;
+  background-color: #282c34;
+}
+progress::-webkit-progress-value{
+  background-color: #B52F17;
+  border-radius: 10px;
+}
+
+#right{
+  height: 94vh;
+  width: 70vw;
+  background-color: #FFFFFF;
+}

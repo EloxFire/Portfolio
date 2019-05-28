@@ -6,12 +6,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/scroll.js"></script>
     <meta charset="utf-8">
-    <title>Snake - Project</title>
+    <title>Lock!t - Project</title>
   </head>
   <body>
-    <header class="hsnake">
+    <header class="hlockit">
       <div class="titleContainer">
-        <h1 class="boxedHeader">Snake</h1>
+        <h1 class="boxedHeader">Lock!t</h1>
       </div>
     </header>
 
@@ -24,28 +24,28 @@
       <h1 class="secondSectionTitle">Project description :</h1>
       <div class="separatorSecond"></div>
       <div class="text">
-        <p>"Snake" is my first little game made in Processing. <br>
-          It's a replica of the orginal game with the same same.
+        <p>"Lock!t" (pronounced 'Lock it !') is a project of a conected padlock for bikes. <br>
+          This padlock is connected via bluetooth with your smartfone and you can lock or unlock it from the Lock!t application.
         </p>
       </div>
 
       <h1 class="secondSectionTitle">Project screenshots :</h1>
       <div class="separatorSecond"></div>
       <div class="text">
-        <p>Here's some screenshots of the project, in real conditions.</p>
+        <p>Here's some screenshots the project, in real conditions.</p>
       </div>
       <div class="screens">
-        <img src="assets/images/projects/snakeScreens.png" alt="'System.exe' HUD screenshots">
+        <img src="assets/images/projects/lockitScreens.png" alt="'System.exe' HUD screenshots">
       </div>
 
       <h1 class="secondSectionTitle">Project infos :</h1>
       <div class="separatorSecond"></div>
       <div class="text">
         <p>
-          The entire project was developped in processing language.<br>
-          The code is distributed through 1 classe and exactly 177 lines of code. <br>
+          The entire project was developped in Arduino language.<br>
+          The code is distributed through 1 classe and exactly 104 lines of code. <br>
           <br>
-          The game is a single palayer game<br>
+          The app is fully usable and only the electronic part of the padlock is built. <br>
         </p>
       </div>
 
@@ -56,12 +56,12 @@
           There's no official presentation video available for this project.
         </p>
       </div>
+      <!-- <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hOstnIVSsqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div> -->
     </section>
 
-    <footer>
-      <hr>
-      <p>&copy; Enzo Avagliano | 2019 | All Right Reserved</p>
-    </footer>
+    <?php include 'assets/php/footer.php' ?>
 
   </body>
 </html>
