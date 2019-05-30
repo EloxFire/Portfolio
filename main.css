@@ -4,6 +4,7 @@
 @import "assets/css/indexSoftware.css";
 @import "assets/css/indexSocial.css";
 @import "assets/css/cv.css";
+@import "assets/css/indexContact.css";
 
 @font-face {
   font-family: 'bebas';
@@ -14,7 +15,7 @@
   src: url("assets/fonts/calvier.ttf");
 }
 
-body, h1, h2, h3, h4, p, section, ul, li, a, button{
+*{
   margin: 0;
   padding: 0;
   font-family: bebas;

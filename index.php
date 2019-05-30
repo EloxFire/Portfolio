@@ -5,7 +5,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/scroll.js"></script>
     <script type="text/javascript" src="assets/js/filterScript.js"></script>
-    <script type="text/javascript" src="assets/js/detailsScript.js"></script>
     <meta charset="utf-8">
     <title>Enzo Avagliano - Homepage.</title>
   </head>
@@ -258,18 +257,54 @@
           <h1>GitHub</h1>
           <p>Link to my Github page, where I post some code and projects.</p>
         </div>
+    </section>
 
-        <div class="download">
-          <div class="secondSectionTitle">Curriculum vitae</div>
-          <div class="separatorSecond"></div>
-          <p class="intro">
-            Also, you can download my cv, by clicking the button right under this text.
-          </p>
-          <button class="downloadButton"><a href="assets/images/cv.pdf" download="Curriculum_Vitae_Enzo_Avagliano">Download my CV</a></button>
+    <section id="contact">
+      <h1 class="sectionTitle">Contact</h1>
+      <div class="separator"></div>
+
+      <div id="contactContainer">
+        <div class="leftContact">
+          <form class="contactForm" action="index.php" method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+            <label for="mail">E-Mail</label>
+            <input type="email" name="mail" placeholder="Enter you mail here (optional)">
+            <label for="message">Your message</label>
+            <textarea name="message" rows="8" cols="80" placeholder="Enter your text here" required></textarea>
+            <input type="submit" name="sendButton" value="Send message">
+          </form>
         </div>
+
+        <div class="rightContact">
+          test
+        </div>
+      </div>
+
+      <?php
+        // $parameters = parse_ini_file('assets/php/db.ini', TRUE);
+        // try {
+        //   $connect = new PDO('mysql:host=localhost; dbname=ynovphp', 'root', 'admin');
+        //   echo "Connect OK !";
+        // } catch (\Exception $e) {
+        //   echo $e -> getMessage() . "<br>";
+        //   echo $e -> getCode() . "<br>";
+        // }
+        //
+        // //Recupération des infos entrée dans le formulaire
+        // //1: on verifie qu'iol y a quelque chose a recupérer
+        // if(isset($_POST['sendButton'])){
+        //   $name = $_POST['name'];
+        //   $msg = $_POST['message'];
+        //   //$connect -> exec("INSERT INTO messages(name, message) VALUES());
+        // }else {
+        //   echo "<br>Un ou plusieurs champs sont vide.";
+        // }
+
+      ?>
+
     </section>
 
     <?php include 'assets/php/footer.php' ?>
-
   </body>
 </html>

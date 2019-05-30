@@ -8,7 +8,6 @@
   font-family: 'Calvier';
   src: url("assets/fonts/calvier.ttf");
 }
-
 *{
   padding: 0;
   margin: 0;
@@ -56,7 +55,7 @@
 .competences{
   display: flex;
   margin-left: 20px;
-  flex-direction: column;
+  flex-direction: row;
 }
 .competences p{
   color: #B52F17;
@@ -66,6 +65,9 @@
 .general, .languages{
   margin-top: 4vh;
   color: #282c34;
+}
+.languages{
+  margin-left: 4vw;
 }
 
 progress[value]{
@@ -84,8 +86,58 @@ progress::-webkit-progress-value{
   border-radius: 10px;
 }
 
+.adminButton button{
+  background-color: #DB875F;
+  color: #282c34;
+  border: 1px solid #282c34;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-top: 5%;
+  margin-left: 20px;
+}
+.adminButton button:hover{
+  background-color: #B52F17;
+  color: #282c34;
+}
+
 #right{
   height: 94vh;
   width: 70vw;
   background-color: #FFFFFF;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+.upleft, .upright, .downleft, .downright{
+  height: 47vh;
+  width: 50%;
+}
+
+.sectionTitleCV{
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  color: #B52F17;
+  margin-left: 1vw;
+  margin-top: 10vh;
+}
+.sectionParaCV{
+  font-size: 1.2em;
+  color: #DB875F;
+  letter-spacing: 2px;
+  margin-left: 3vw;
+  margin-top: 2vh;
+}
+.dateCV{
+  text-align: right;
+  margin-right: 10vw;
+  color: #B52F17;
+}
+.hobbiesList{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }

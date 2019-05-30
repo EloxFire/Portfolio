@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'bebas';
+  src: url("assets/fonts/bebas.ttf");
+}
+@font-face {
+  font-family: 'Calvier';
+  src: url("assets/fonts/calvier.ttf");
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+
+#contactContainer{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.leftContact{
+  width: 50%;
+  height: 30vh;
+  background-color: rgb(0, 18, 138);
+
+  display: block;
+}
+
+.rightContact{
+  width: 50%;
+  height: 30vh;
+  background-color: rgb(138, 0, 117);
+}
