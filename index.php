@@ -265,7 +265,7 @@
 
       <div id="contactContainer">
         <div class="leftContact">
-          <form class="contactForm" action="index.php" method="post">
+          <form class="contactForm" action="assets/php/infosContact.php" method="post">
             <label for="name">Name</label>
             <input type="text" name="name" placeholder="Enter your name" required>
             <label for="mail">E-Mail</label>
