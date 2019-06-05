@@ -86,7 +86,7 @@
             In-game modifications
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="tdk.php">See more</a></p>
+          <p class="seeMore"><a href="assets/pages/tdk.php">See more</a></p>
         </div>
         <div class="filterDiv arduino cuitepates less">
           <h3>Cuitépâtes</h3>
@@ -100,7 +100,7 @@
             Life simplification
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="cuitepates.php">See more</a></p>
+          <p class="seeMore"><a href="assets/pages/cuitepates.php">See more</a></p>
         </div>
 
         <div class="filterDiv arduino lockit less">
@@ -115,7 +115,7 @@
             Life simplification
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="lockit.php">See more</a></p>
+          <p class="seeMore"><a href="assets/pages/lockit.php">See more</a></p>
         </div>
 
         <div class="filterDiv processing snake less">
@@ -130,7 +130,7 @@
             Remake the mobile game Snake
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="snake.php">See more</a></p>
+          <p class="seeMore"><a href="assets/pages/snake.php">See more</a></p>
         </div>
 
         <div class="filterDiv processing systemexe less">
@@ -145,7 +145,7 @@
             'Asteroid' like 2D game
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="system.php">See more</a></p>
+          <p class="seeMore"><a href="assets/pages/system.php">See more</a></p>
         </div>
         <div class="filterDiv html portfolio less">
           <h3>My Portfolio</h3>
@@ -159,7 +159,7 @@
             professional visibility
           </p>
           <div class="separatorCard"></div>
-          <p class="seeMore"><a href="portfolio.php">See more</a></p>
+          <p class="seeMore"><a href="assets/pages/portfolio.php">See more</a></p>
         </div>
       </div>
     </section>
@@ -265,44 +265,17 @@
 
       <div id="contactContainer">
         <div class="leftContact">
-          <form class="contactForm" action="assets/php/infosContact.php" method="post">
-            <label for="name">Name</label>
+          <form class="contactForm" action="assets/php/formulaire.php" method="post">
+            <label for="name">Name</label><span class="required">*</span>
             <input type="text" name="name" placeholder="Enter your name" required>
-            <label for="mail">E-Mail</label>
+            <label for="mail">E-Mail (Optional)</label>
             <input type="email" name="mail" placeholder="Enter you mail here (optional)">
-            <label for="message">Your message</label>
+            <label for="message">Your message</label><span class="required">*</span>
             <textarea name="message" rows="8" cols="80" placeholder="Enter your text here" required></textarea>
             <input type="submit" name="sendButton" value="Send message">
           </form>
         </div>
-
-        <div class="rightContact">
-          test
-        </div>
       </div>
-
-      <?php
-        // $parameters = parse_ini_file('assets/php/db.ini', TRUE);
-        // try {
-        //   $connect = new PDO('mysql:host=localhost; dbname=ynovphp', 'root', 'admin');
-        //   echo "Connect OK !";
-        // } catch (\Exception $e) {
-        //   echo $e -> getMessage() . "<br>";
-        //   echo $e -> getCode() . "<br>";
-        // }
-        //
-        // //Recupération des infos entrée dans le formulaire
-        // //1: on verifie qu'iol y a quelque chose a recupérer
-        // if(isset($_POST['sendButton'])){
-        //   $name = $_POST['name'];
-        //   $msg = $_POST['message'];
-        //   //$connect -> exec("INSERT INTO messages(name, message) VALUES());
-        // }else {
-        //   echo "<br>Un ou plusieurs champs sont vide.";
-        // }
-
-      ?>
-
     </section>
 
     <?php include 'assets/php/footer.php' ?>

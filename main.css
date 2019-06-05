@@ -5,6 +5,7 @@
 @import "assets/css/indexSocial.css";
 @import "assets/css/cv.css";
 @import "assets/css/indexContact.css";
+@import "assets/css/connect.css";
 
 @font-face {
   font-family: 'bebas';
@@ -25,6 +26,10 @@ footer{
   margin-top: 10vh;
   font-size: 20px;
   text-align: center;
+}
+
+.required{
+  color: red;
 }
 
 ::-webkit-scrollbar {

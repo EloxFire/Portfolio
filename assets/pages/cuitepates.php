@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="assets/css/projectsPages.css">
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="../css/projectsPages.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/scroll.js"></script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
     <meta charset="utf-8">
     <title>Cuitépâtes - Project</title>
   </head>
@@ -15,7 +15,7 @@
       </div>
     </header>
 
-    <?php include 'assets/php/menuProjects.php' ?>
+    <?php include '../php/menuProjects.php' ?>
 
     <section id="tdkAbout">
       <h1 class="secondSectionTitle">Project description :</h1>
@@ -32,7 +32,7 @@
         <p>Here's some screenshots of the project, in real conditions.</p>
       </div>
       <div class="screens">
-        <img src="assets/images/projects/cuitepatesScreens.png" alt="'System.exe' HUD screenshots">
+        <img src="../images/projects/cuitepatesScreens.png" alt="'System.exe' HUD screenshots">
       </div>
 
       <h1 class="secondSectionTitle">Project infos :</h1>
@@ -55,7 +55,7 @@
       </div>
     </section>
 
-    <?php include 'assets/php/footer.php' ?>
+    <?php include '../php/footer.php' ?>
 
   </body>
 </html>

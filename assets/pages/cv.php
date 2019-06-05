@@ -2,17 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../../main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <title>Curriculum vitae - Enzo Avagliano</title>
   </head>
   <body>
     <main>
-      <?php include 'assets/php/menuCV.php' ?>
+      <?php include '../php/menuCV.php' ?>
       <section id="cvContainer">
         <div id="left">
           <div class="presContainer">
-            <img src="assets/images/Social/cvpp.png" alt="Enzo Avagliano Profile Picture">
+            <img src="../images/Social/cvpp.png" alt="Enzo Avagliano Profile Picture">
             <div class="titleContainerCV">
               <h1 class="nameTitle">Enzo Avagliano</h1>
               <p class="statusTitle">étudiant - Developpeur</p>

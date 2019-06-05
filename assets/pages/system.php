@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="assets/css/projectsPages.css">
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="../css/projectsPages.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/scroll.js"></script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
     <meta charset="utf-8">
     <title>System.exe - Project</title>
   </head>
@@ -16,8 +16,8 @@
     </header>
 
     <ul id="menu">
-      <li><a class="underlinedMenu" href="index.html">Main page</a></li>
-      <li style="float:right"><img class="logoInMenu" src="assets/images/logo.png" alt="Logo Enzo Avagliano"></li>
+      <li><a class="underlinedMenu" href="../../index.php">Main page</a></li>
+      <li style="float:right"><img class="logoInMenu" src="../images/logo.png" alt="Logo Enzo Avagliano"></li>
     </ul>
 
     <section id="tdkAbout">
@@ -35,7 +35,7 @@
         <p>Here's some screenshots of the HUD of the plugin, in real conditions.</p>
       </div>
       <div class="screens">
-        <img src="assets/images/projects/systemScreens.png" alt="'System.exe' HUD screenshots">
+        <img src="../images/projects/systemScreens.png" alt="'System.exe' HUD screenshots">
       </div>
 
       <h1 class="secondSectionTitle">Project infos :</h1>
@@ -63,7 +63,7 @@
       </div> -->
     </section>
 
-    <?php include 'assets/php/footer.php' ?>
+    <?php include '../php/footer.php' ?>
 
   </body>
 </html>
