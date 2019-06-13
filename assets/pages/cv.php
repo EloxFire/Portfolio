@@ -46,8 +46,8 @@
             </div>
           </div>
 
-          <div class="adminButton">
-            <button type="button" name="add">Modify CV</button>
+          <div class=".adminButtonDiv">
+            <a href="adminPanel.php">Modify cv</a>
           </div>
         </div>
 

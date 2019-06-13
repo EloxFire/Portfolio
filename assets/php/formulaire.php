@@ -1,9 +1,8 @@
 <?php
-  $parameters = parse_ini_file('db.ini', TRUE);
+  $parameters = parse_ini_file('db.ini');
   try {
     //CONNEXION A LA BDD
-    //$connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
-    $connect = new PDO('mysql:host=localhost;dbname=ynovphp', 'root', 'admin');
+    $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
     $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     //ON PREPARE NOTRE REQUETE
@@ -18,7 +17,7 @@
 
     $stmt->execute(); //ON EXECUTE NOTRE REQUETTE PRECEDEMENT PREPAREE
     echo "Informations delivered !"; //ON ENVOIE UN PETIT MESSAGE
-  }catch (\Exception $e) {
+  }catch (Exception $e) {
     echo $e -> getMessage() . "<br>";
     echo $e -> getCode() . "<br>";
   }

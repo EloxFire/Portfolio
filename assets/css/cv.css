@@ -86,20 +86,17 @@ progress::-webkit-progress-value{
   border-radius: 10px;
 }
 
-.adminButton button{
+.adminButtonDiv .adminButton{
   background-color: #DB875F;
   color: #282c34;
   border: 1px solid #282c34;
-  padding: 12px 24px;
-  text-align: center;
-  text-decoration: none;
   font-size: 24px;
   transition-duration: 0.4s;
   cursor: pointer;
   margin-top: 5%;
   margin-left: 20px;
 }
-.adminButton button:hover{
+.adminButtonDiv .adminButton:hover{
   background-color: #B52F17;
   color: #282c34;
 }
