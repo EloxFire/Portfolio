@@ -1,36 +1,34 @@
 <?php
 
-$parameters = parse_ini_file('db.ini');
+session_start();
 
+$parameters = parse_ini_file('db.ini');
 try {
-  //CONNEXION A LA BDD
   $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
   $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  if (!isset($_POST['login']) || !isset($_POST['mdp'])){
+    //echo "<script>alert('Bad password or login, you've been redirected...')</script>";
+    header('location: ../../index.php');
+    exit;
 
-  $login = $_POST['login'];
-  $pass = $_POST['mdp'];
-
-  $stmt = $connect->prepare('SELECT login, pass FROM admins');
-  $stmt->execute();
+  }
+  // On prepare la requete sql par la requete suivant
+  $stmt = $connect->prepare('SELECT * FROM `admins` WHERE `login` = :login AND `pass` = :password');
+  $stmt->execute(array(":login" => $_POST['login'], ":password" => $_POST['mdp']));
   $result = $stmt->fetch();
 
-
-  if (isset($_POST['login']) && isset($_POST['mdp'])) {
-    if($login == $result['login'] && $pass == $result['pass']){
-
-      session_start();
-      $_SESSION['login'] = $login;
-      $_SESSION['pass'] = $pass;
-      header('location: ../pages/adminPanel.php');
-      echo "Vous êtes Connecté !";
-    }else{
-      echo "Pas le bon login ou pass";
-    }
+  if ($result != null){ //VERIFICATION DE SI LE RESULTAT N'EST PAS NUL
+    $_SESSION['login'] = $_POST['login'];
+    $_SESSION['pass'] = $_POST['mdp'];
+    header('location: ../pages/adminPanel.php');
+    exit;
   }
+  echo "<script>alert('Bad password or login, you've been redirected...')</script>";
+  header('location: ../../index.php');
+  exit;
 
-}catch(\Exeption $e){
-  echo $e -> getMessage() . "<br>";
-  echo $e -> getCode() . "<br>";
+}catch(Exeption $e){
+  echo @"{$e->getMessage()}<br>{$e->getCode()}<br>";
 }
-$connect = null;
+
 ?>

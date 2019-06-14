@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../css/connect.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/scroll.js"></script>
+    <link rel="shortcut icon" href="../images/logo.ico">
     <meta charset="utf-8">
     <title>Connexion - Enzo Avagliano</title>
   </head>

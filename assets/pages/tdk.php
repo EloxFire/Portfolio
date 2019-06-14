@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/scroll.js"></script>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="../images/logo.ico">
     <title>Terre du Kill - Project</title>
   </head>
   <body>

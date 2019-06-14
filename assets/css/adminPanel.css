@@ -1,0 +1,59 @@
+/*#B52F17 text*/
+/*#DB875F BG*/
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+*{
+padding: 0;
+margin: 0;
+}
+
+#top-panel{
+  width: 100vw;
+  height: 10vh;
+  background-color: #282c34;
+  display: table-cell;
+  vertical-align: middle;
+  color: #FFFFFF;
+}
+.adminPanelTitle{
+  font-size: 2.5em;
+  margin-left: 2vw;
+}
+#side-panel{
+  position: absolute;
+  width: 12vw;
+  height: 90vh;
+  background-color: #282c34;
+  padding-right: 5px;
+  color: #FFFFFF;
+}
+.sidePanelList{
+  margin-left: 20px;
+  margin-top: 20px;
+  color: #FFFFFF;
+}
+#side-panel li{
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+#panel-container{
+  justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  color: #FFFFFF;
+}
+
+.widget{
+  width: 40%;
+  height: 40vh;
+  background-color: rgb(175, 119, 181);
+  margin: 20px;
+  margin-right: 40px;
+}
+
+.panelTitle{
+  font-family: 'Lato', sans-serif;
+  margin: 10px;
+}
