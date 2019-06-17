@@ -48,7 +48,7 @@
         </div>
 
         <div class=".adminButtonDiv">
-          <a href="adminPanel.php">Modify cv</a>
+          <a href="connexionPage.php">Modify cv</a>
         </div>
       </div>
 
