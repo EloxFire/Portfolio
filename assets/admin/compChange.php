@@ -1,39 +1,22 @@
 <?php
 $param = parse_ini_file('../../db.ini');
 
-    try{
-        $dbh = new PDO($param['url'], $param['user'], $param['password']);
-    }catch(PDOException $e){
-        echo("Erreur de connexion");
-        exit;
-    }
+try{
+  //CONNEXION VIA PDO
+  $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
+  $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if(isset($_POST['comp'])) {
-        $comp=$_POST['comp'];
-    } else {
-        $comp="";
-    }
+  if(isset($_POST['compNameE']) && isset($_POST['compValueE'])) {
+    $comp = $_POST['compNameE'];
+    $percent = $_POST['compValueE']."%";
 
-    if(isset($_POST['percent'])) {
-        $percent=$_POST['percent']."%";
-    } else {
-        $percent="";
-    }
-    if (empty($comp) OR empty($percent)) {
-        echo '<font color="red">Attention, veuillez remplir les champs !</font>';
-        echo "<form action='admin_page.php' method='get'>
-        <input type='submit' value='Retour'>
-    </form>";
-        return;
-    }
-    else {
-        $query = "UPDATE competences SET pourcentage = :percent WHERE nom_comp = :comp";
-        $sql = $dbh->prepare($query);
-        $sql->execute(array(":comp"=>$comp, ":percent"=>$percent));
-        $dbh = null;
-        echo('Compétence modifiée !');
-        echo "<form action='admin_page.php' method='get'>
-            <input type='submit' value='Retour'>
-        </form>";
-        exit;
-    }
+    $stmt = $dbh->prepare("UPDATE competences SET valeur = :percent WHERE nom = :comp";);
+    $stmt->execute(array(":comp"=>$comp, ":percent"=>$percent));
+    header("location: adminPanel.php#widgetCvContainer");
+    echo('Compétence modifiée !');
+    exit;
+  }
+}catch(PDOException $e){
+  echo @"{$e->getMessage()}<br>{$e->getCode()}<br>";
+}
+?>

@@ -105,7 +105,7 @@ session_start();
       <div id="widgetCV" class="widget-by2" style="margin-top: 8em;">
         <h1 class="widgetTitle"><i class="fas fa-plus"></i> Add a competence</h1>
 
-        <form class="cvFormAdd" action="../admin/compAdd.php" method="post">
+        <form class="cvFormAdd" action="compAdd.php" method="post">
           <label for="compName">Competence name</label><span class="required">*</span>
           <input type="text" name="compName" placeholder="Name of the competence goes here" required>
 
@@ -119,9 +119,9 @@ session_start();
       <div class="widget-by2" style="margin-top: 8em;">
         <h1 class="widgetTitle"><i class="fas fa-edit"></i> Edit a competence</h1>
 
-        <form class="cvFormEdit" action="../admin/compAdd.php" method="post">
-          <label for="compName">Competence</label><span class="required">*</span>
-          <select name="compName">
+        <form class="cvFormEdit" action="../admin/compChange.php" method="post">
+          <label for="compNameE">Competence</label><span class="required">*</span>
+          <select name="compNameE">
             <option value="html">HTML</option>
             <option value="css">CSS</option>
             <option value="javascript">Javascript</option>
@@ -132,8 +132,8 @@ session_start();
             <option value="italien">Italian</option>
           </select>
 
-          <label for="compValue">Date (optional)</label>
-          <input type="number" name="compValue" placeholder="Enter the new value of the competence">
+          <label for="compValueE">Date (optional)</label>
+          <input type="number" name="compValueE" placeholder="Enter the new value of the competence">
 
           <input type="submit" name="sendButton" value="Modify competence">
         </form>

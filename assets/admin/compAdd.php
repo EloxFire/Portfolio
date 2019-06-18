@@ -1,31 +1,17 @@
 <?php
-$parameters = parse_ini_file('../php/db.ini');
+$parameters = parse_ini_file('../../db.ini');
 
 try {
   $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
   $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  if(isset($_POST['comp'])) {
-    $comp=$_POST['comp'];
-  } else {
-    $comp="";
-  }
+  if(isset($_POST['compName']) && isset($_POST['compValue'])) {
+    $comp = $_POST['compName'];
+    $percent = $_POST['compValue'];
 
-  if(isset($_POST['percent'])) {
-    $percent=$_POST['percent'].'%';
-  } else {
-    $percent="";
-  }
-
-  if(empty($comp) OR empty($percent)) {
-    echo '<font color="red">Veuillez remplir tout les champs</font>';
-    return;
-  } else {
-    $query = ;
-    $stmt = $connect->prepare("INSERT INTO competences(nom, veleur)  VALUES(?,?)");
+    $stmt = $connect->prepare("INSERT INTO competences(nom, valeur)  VALUES(?,?)");
     $stmt->execute([$comp,$percent]);
-    var_dump($comp . $percent);
-    echo('Competence ajoutée');
+    header("location: adminPanel.php#widgetCvContainer");
     exit;
   }
 } catch (PDOException $e) {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$parameters = parse_ini_file('db.ini');
+$parameters = parse_ini_file('../../db.ini');
 
 try {
   //CONNEXION VIA PDO

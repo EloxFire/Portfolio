@@ -1,5 +1,5 @@
 <?php
-$parameters = parse_ini_file('db.ini');
+$parameters = parse_ini_file('../../db.ini');
 try {
   //CONNEXION A LA BDD
   $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
