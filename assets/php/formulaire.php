@@ -22,5 +22,4 @@ try {
   echo $e -> getMessage() . "<br>";
   echo $e -> getCode() . "<br>";
 }
-$connect = null;
 ?>

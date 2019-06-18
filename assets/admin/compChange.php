@@ -1,5 +1,5 @@
 <?php
-$param = parse_ini_file('../../db.ini');
+$parameters = parse_ini_file('../../db.ini');
 
 try{
   //CONNEXION VIA PDO
@@ -7,13 +7,11 @@ try{
   $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   if(isset($_POST['compNameE']) && isset($_POST['compValueE'])) {
-    $comp = $_POST['compNameE'];
-    $percent = $_POST['compValueE']."%";
 
-    $stmt = $dbh->prepare("UPDATE competences SET valeur = :percent WHERE nom = :comp";);
-    $stmt->execute(array(":comp"=>$comp, ":percent"=>$percent));
+    $stmt = $connect->prepare('UPDATE `competences` SET `value` = :percent WHERE `nom` = :comp');
+    $stmt->execute(array(":percent" => $_POST['compValueE'], ":comp" => $_POST['compNameE']));
+
     header("location: adminPanel.php#widgetCvContainer");
-    echo('Compétence modifiée !');
     exit;
   }
 }catch(PDOException $e){

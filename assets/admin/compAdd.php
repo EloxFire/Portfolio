@@ -9,7 +9,7 @@ try {
     $comp = $_POST['compName'];
     $percent = $_POST['compValue'];
 
-    $stmt = $connect->prepare("INSERT INTO competences(nom, valeur)  VALUES(?,?)");
+    $stmt = $connect->prepare("INSERT INTO competences(nom, value)  VALUES(?,?)");
     $stmt->execute([$comp,$percent]);
     header("location: adminPanel.php#widgetCvContainer");
     exit;
