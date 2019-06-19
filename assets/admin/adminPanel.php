@@ -1,5 +1,7 @@
 <?php
 session_start();
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', TRUE);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -14,10 +16,12 @@ session_start();
   <title>Admin Panel - Enzo Avagliano</title>
 </head>
 <body>
+  <?php
+  $parameters = parse_ini_file('../../db.ini');
+  $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
+  $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  ?>
   <main>
-    <section id="top-panel">
-
-    </section>
 
     <div class="navbar">
       <h1 class="adminPanelTitle"><i class="fas fa-users-cog"></i> Welcome <?php echo $_SESSION['login'];?> !</h1>
@@ -44,21 +48,18 @@ session_start();
       <div id="widgetProjectAdd" class="widget-by2" style="margin-top: 8em;">
         <h1 class="widgetTitle"><i class="fas fa-plus"></i> Add a project</h1>
 
-        <form class="projectFormAdd" action="../admin/compAdd.php" method="post">
+        <form class="projectFormAdd" action="../admin/projectAdd.php" method="post">
           <label for="projectName">Project name</label><span class="required">*</span>
           <input type="text" name="projectName" placeholder="Enter the project name here" required>
 
           <label for="projectDescription">Project description (optional)</label>
-          <input type="text" name="description" placeholder="Enter the project description here">
+          <input type="text" name="projectDescription" placeholder="Enter the project description here">
 
           <label for="projectLanguage">Project language</label><span class="required">*</span>
           <input type="text" name="projectLanguage" placeholder="Enter the project language" required>
 
           <label for="projectImage">Project image (optional)</label>
           <input type="file" name="projectImage" placeholder="Post a project image here">
-
-          <label for="projectDate">Date (optional)</label>
-          <input type="date" name="projectDate" placeholder="Enter the creation date of the project">
 
           <input type="submit" name="sendButton" value="Add project">
         </form>
@@ -67,34 +68,40 @@ session_start();
       <div class="widget-by2" style="margin-top: 8em;">
         <h1 class="widgetTitle"><i class="fas fa-edit"></i> Edit a project</h1>
 
-        <form class="projectFormEdit" action="../admin/Add.php" method="post">
-          <label for="projectName">Project name</label>
-          <select name="projectName">
-            <option value="tdk">Terre du Kill</option>
-            <option value="cuitepates">Cuitépates</option>
-            <option value="lockit">Lock!t</option>
-            <option value="snake">Snake</option>
-            <option value="systemexe">System.exe</option>
-            <option value="portfolio">Portfolio</option>
+        <form class="projectFormEdit" action="../admin/projectChange.php" method="post">
+          <label for="projectNameE">Project name</label>
+          <select name="projectNameE">
+            <?php
+            $stmt = $connect->prepare('SELECT `name` FROM `projets`');
+            $stmt->execute();
+            $tabulation = [];
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                echo "<option name='$val'>$val</option>";
+              }
+            }
+            ?>
           </select>
 
-          <label for="projectDescription">Project description</label>
-          <input type="text" name="description" placeholder="Enter the new project description ">
+          <label for="projectDescriptionE">Project description</label>
+          <input type="text" name="projectDescriptionE" placeholder="Enter the new project description ">
 
-          <label for="projectLanguage">Project language</label>
-          <select name="projectLanguage">
-            <option value="java">Java</option>
-            <option value="c">C / C# / C++</option>
-            <option value="html">HTML / CSS</option>
-            <option value="arduino">Arduino</option>
-            <option value="processing">Processing</option>
+          <label for="projectLanguageE">Project language</label>
+          <select name="projectLanguageE">
+            <?php
+            $stmt2 = $connect->prepare('SELECT `lang` FROM `projets`');
+            $stmt2->execute();
+            $tabulation = [];
+            while($ligne = $stmt2->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                echo "<option name='$val'>$val</option>";
+              }
+            }
+            ?>
           </select>
 
           <label for="projectImage">Project image (optional)</label>
-          <input type="file" name="projectImage" placeholder="Post a project image">
-
-          <label for="projectDate">Date (optional)</label>
-          <input type="date" name="projectDate" placeholder="Enter the creation date of the project">
+          <input type="file" name="projectImageE" placeholder="Post a project image">
 
           <input type="submit" name="sendButton" value="Modify project">
         </form>
@@ -122,18 +129,43 @@ session_start();
         <form class="cvFormEdit" action="../admin/compChange.php" method="post">
           <label for="compNameE">Competence</label><span class="required">*</span>
           <select name="compNameE">
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="javascript">Javascript</option>
-            <option value="adobe">Adobe serie</option>
-            <option value="office">Office serie</option>
-            <option value="francais">French</option>
-            <option value="anglais">English</option>
-            <option value="italien">Italian</option>
+            <?php
+            $stmt = $connect->prepare('SELECT `nom` FROM `competences`');
+            $stmt->execute();
+            $tabulation = [];
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                echo "<option name='$val'>$val</option>";
+              }
+            }
+            ?>
           </select>
 
           <label for="compValueE">Date (optional)</label>
           <input type="number" name="compValueE" placeholder="Enter the new value of the competence">
+
+          <input type="submit" name="sendButton" value="Modify competence">
+        </form>
+      </div>
+
+      <div class="widget-by2" style="margin-top: -22em;">
+        <h1 class="widgetTitle"><i class="fas fa-edit"></i> Delete a competence</h1>
+
+
+        <form class="cvFormEdit" action="../admin/compDel.php" method="post">
+          <label for="compNameD">Competence</label><span class="required">*</span>
+          <select name="compNameD">
+            <?php
+            $stmt = $connect->prepare('SELECT `nom` FROM `competences`');
+            $stmt->execute();
+            $tabulation = [];
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                echo "<option name='$val'>$val</option>";
+              }
+            }
+            ?>
+          </select>
 
           <input type="submit" name="sendButton" value="Modify competence">
         </form>
@@ -168,13 +200,7 @@ session_start();
           <label for="expName">Experience</label><span class="required">*</span>
           <select name="expName">
             <option value="html">VAMO</option>
-            <!-- <option value="css">CSS</option>
-            <option value="javascript">Javascript</option>
-            <option value="adobe">Adobe serie</option>
-            <option value="office">Office serie</option>
-            <option value="francais">French</option>
-            <option value="anglais">English</option>
-            <option value="italien">Italian</option> -->
+
           </select>
 
           <label for="compValue">Experience Date (optional)</label>

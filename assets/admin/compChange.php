@@ -9,7 +9,7 @@ try{
   if(isset($_POST['compNameE']) && isset($_POST['compValueE'])) {
 
     $stmt = $connect->prepare('UPDATE `competences` SET `value` = :percent WHERE `nom` = :comp');
-    $stmt->execute(array(":percent" => $_POST['compValueE'], ":comp" => $_POST['compNameE']));
+    $stmt->execute(array(":percent" => $_POST['compValueE'], ":comp" => strtolower($_POST['compNameE'])));
 
     header("location: adminPanel.php#widgetCvContainer");
     exit;

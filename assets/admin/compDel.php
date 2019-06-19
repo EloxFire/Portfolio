@@ -6,10 +6,10 @@ try{
   $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
   $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  if(isset($_POST['compNameE']) && isset($_POST['compValueE'])) {
+  if(isset($_POST['compNameD'])) {
 
     $stmt = $connect->prepare('DELETE FROM `competences` WHERE `nom` = :comp');
-    $stmt->execute(array(":comp" => $_POST['compNameE']);
+    $stmt->execute(array(":comp" => strtolower($_POST['compNameE']));
 
     header("location: adminPanel.php#widgetCvContainer");
     exit;

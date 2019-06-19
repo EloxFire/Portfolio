@@ -6,17 +6,9 @@ try {
   $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   //ON PREPARE NOTRE REQUETE
-  $stmt = $connect->prepare("INSERT INTO messages(name, message, mail) VALUES (:name, :message, :email)");
-  $stmt->bindParam(':name', $name); //ON DEFINIS LES PARAMETRES SELON NOTRE FORMULAIRE
-  $stmt->bindParam(':message', $message);
-  $stmt->bindParam(':email', $mail);
-
-  $name = $_POST['name'];
-  $message = $_POST['message'];
-  $mail = $_POST['mail'];
-
-  $stmt->execute(); //ON EXECUTE NOTRE REQUETTE PRECEDEMENT PREPAREE
-  header('location: ../../index.php');
+  $stmt = $connect->prepare("INSERT INTO messages(name, message, mail) VALUES (?, ?, ?)");
+  $stmt->execute(array($_POST['name'], $_POST['message'], $_POST['mail'])); //ON EXECUTE NOTRE REQUETTE PRECEDEMENT PREPAREE
+  header('location: ../../index.php#contact');
   exit;
 }catch (Exception $e) {
   echo $e -> getMessage() . "<br>";

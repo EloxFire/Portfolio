@@ -10,7 +10,7 @@ try {
     $percent = $_POST['compValue'];
 
     $stmt = $connect->prepare("INSERT INTO competences(nom, value)  VALUES(?,?)");
-    $stmt->execute([$comp,$percent]);
+    $stmt->execute([strtolower($comp),$percent]);
     header("location: adminPanel.php#widgetCvContainer");
     exit;
   }
