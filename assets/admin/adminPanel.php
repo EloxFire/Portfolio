@@ -14,16 +14,16 @@ ini_set('display_errors', TRUE);
   gtag('js', new Date());
 
   gtag('config', 'UA-142128409-1');
-</script>
+  </script>
 
-<link rel="stylesheet" href="../../main.css">
-<link rel="stylesheet" href="../css/adminPanel.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="../js/scroll.js"></script>
-<link rel="shortcut icon" href="../images/logo.ico">
-<script src="https://kit.fontawesome.com/f59aae8cd6.js"></script>
-<meta charset="utf-8">
-<title>Admin Panel - Enzo Avagliano</title>
+  <link rel="stylesheet" href="../../main.css">
+  <link rel="stylesheet" href="../css/adminPanel.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/scroll.js"></script>
+  <link rel="shortcut icon" href="../images/logo.ico">
+  <script src="https://kit.fontawesome.com/f59aae8cd6.js"></script>
+  <meta charset="utf-8">
+  <title>Admin Panel - Enzo Avagliano</title>
 </head>
 <body>
   <?php
@@ -47,6 +47,9 @@ ini_set('display_errors', TRUE);
     <section id="widgetGeneralContainer">
       <div id="widgetGeneral" class="widget-by2" style="margin-top: 8em;">
         <h1 class="widgetTitle"><i class="fas fa-chart-line"></i> Realtime Trafic</h1>
+        <?php
+        echo $results;
+        ?>
       </div>
 
       <div class="widget-by2" style="margin-top: 8em;">
@@ -63,7 +66,7 @@ ini_set('display_errors', TRUE);
           <input type="text" name="projectName" placeholder="Enter the project name here" required>
 
           <label for="projectDescription">Project description (optional)</label>
-          <input type="text" name="projectDescription" placeholder="Enter the project description here">
+          <textarea name="projectDescription" rows="5" cols="80" placeholder="Enter the project description here"></textarea>
 
           <label for="projectLanguage">Project language</label><span class="required">*</span>
           <input type="text" name="projectLanguage" placeholder="Enter the project language" required>
@@ -78,7 +81,7 @@ ini_set('display_errors', TRUE);
       <div class="widget-by2" style="margin-top: 8em;">
         <h1 class="widgetTitle"><i class="fas fa-edit"></i> Edit a project</h1>
 
-        <form class="projectFormEdit" action="../admin/projectChange.php" method="post">
+        <form class="projectFormEdit" action="projectChange.php" method="post">
           <label for="projectNameE">Project name</label>
           <select name="projectNameE">
             <?php
@@ -94,7 +97,7 @@ ini_set('display_errors', TRUE);
           </select>
 
           <label for="projectDescriptionE">Project description</label>
-          <input type="text" name="projectDescriptionE" placeholder="Enter the new project description ">
+          <textarea name="projectDescriptionE" rows="5" cols="80" placeholder="Enter the project description here"></textarea>
 
           <label for="projectLanguageE">Project language</label>
           <select name="projectLanguageE">
@@ -116,6 +119,29 @@ ini_set('display_errors', TRUE);
           <input type="submit" name="sendButton" value="Modify project">
         </form>
       </div>
+
+      <div class="widget-by2" style="margin-top: -15em;">
+        <h1 class="widgetTitle"><i class="fas fa-trash-alt"></i> Delete a project</h1>
+
+
+        <form class="cvFormDel" action="projectDel.php" method="post">
+          <label for="projectNameD">Project name</label><span class="required">*</span>
+          <select name="projectNameD">
+            <?php
+            $stmt = $connect->prepare('SELECT `name` FROM `projets`');
+            $stmt->execute();
+            $tabulation = [];
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                echo "<option name='$val'>$val</option>";
+              }
+            }
+            ?>
+          </select>
+
+          <input type="submit" name="sendButton" value="Delete project">
+        </form>
+      </div>
     </section>
 
     <section id="widgetCvContainer">
@@ -126,7 +152,7 @@ ini_set('display_errors', TRUE);
           <label for="compName">Competence name</label><span class="required">*</span>
           <input type="text" name="compName" placeholder="Name of the competence goes here" required>
 
-          <label for="compValue">Date (optional)</label><span class="required">*</span>
+          <label for="compValue">Velue</label><span class="required">*</span>
           <input type="number" name="compValue" placeholder="Value in percent" required>
 
           <input type="submit" name="sendButton" value="Add competence">
@@ -136,8 +162,8 @@ ini_set('display_errors', TRUE);
       <div class="widget-by2" style="margin-top: 8em;">
         <h1 class="widgetTitle"><i class="fas fa-edit"></i> Edit a competence</h1>
 
-        <form class="cvFormEdit" action="../admin/compChange.php" method="post">
-          <label for="compNameE">Competence</label><span class="required">*</span>
+        <form class="cvFormEdit" action="compChange.php" method="post">
+          <label for="compNameE">Competence name</label><span class="required">*</span>
           <select name="compNameE">
             <?php
             $stmt = $connect->prepare('SELECT `nom` FROM `competences`');
@@ -151,19 +177,19 @@ ini_set('display_errors', TRUE);
             ?>
           </select>
 
-          <label for="compValueE">Date (optional)</label>
-          <input type="number" name="compValueE" placeholder="Enter the new value of the competence">
+          <label for="compValueE">value</label>
+          <input type="number" name="compValueE" placeholder="Enter the value of the competence">
 
           <input type="submit" name="sendButton" value="Modify competence">
         </form>
       </div>
 
       <div class="widget-by2" style="margin-top: -22em;">
-        <h1 class="widgetTitle"><i class="fas fa-edit"></i> Delete a competence</h1>
+        <h1 class="widgetTitle"><i class="fas fa-trash-alt"></i> Delete a competence</h1>
 
 
-        <form class="cvFormEdit" action="../admin/compDel.php" method="post">
-          <label for="compNameD">Competence</label><span class="required">*</span>
+        <form class="cvFormDel" action="compDel.php" method="post">
+          <label for="compNameD">Competence name</label><span class="required">*</span>
           <select name="compNameD">
             <?php
             $stmt = $connect->prepare('SELECT `nom` FROM `competences`');
@@ -177,7 +203,7 @@ ini_set('display_errors', TRUE);
             ?>
           </select>
 
-          <input type="submit" name="sendButton" value="Modify competence">
+          <input type="submit" name="sendButton" value="Delete competence">
         </form>
       </div>
     </section>
@@ -191,13 +217,13 @@ ini_set('display_errors', TRUE);
           <input type="text" name="expName" placeholder="Enter the experience name here" required>
 
           <label for="expDescription">Experience description (optional)</label>
-          <input type="text" name="expdescription" placeholder="Enter the experience description here">
+          <textarea name="expDescription" placeholder="Enter the experience description here" rows="8" cols="80"></textarea>
 
-          <label for="expImage">Experience place</label><span class="required">*</span>
-          <input type="file" name="expImage" placeholder="Post a project image here" required>
+          <label for="expPlace">Experience place</label><span class="required">*</span>
+          <input type="text" name="expPlace" placeholder="Where was the experience" required>
 
           <label for="expDate">Experience Date (optional)</label>
-          <input type="date" name="expDate" placeholder="Enter the creation date of the project">
+          <input type="date" name="expDate" placeholder="Enter the date of the experience">
 
           <input type="submit" name="sendButton" value="Add Experience">
         </form>
@@ -207,16 +233,22 @@ ini_set('display_errors', TRUE);
         <h1 class="widgetTitle"><i class="fas fa-edit"></i> Edit an experience</h1>
 
         <form class="expFormEdit" action="../admin/compAdd.php" method="post">
-          <label for="expName">Experience</label><span class="required">*</span>
-          <select name="expName">
+          <label for="expNameE">Experience</label><span class="required">*</span>
+          <select name="expNameE">
             <option value="html">VAMO</option>
 
           </select>
 
-          <label for="compValue">Experience Date (optional)</label>
-          <input type="number" name="expValue" placeholder="Enter the new date of the experience">
+          <label for="expDescriptionE">Experience description (optional)</label>
+          <textarea name="expDescriptionE" placeholder="Enter the experience description here" rows="8" cols="80"></textarea>
 
-          <input type="submit" name="sendButton" value="Modify experience">
+          <label for="expPlaceE">Experience place</label><span class="required">*</span>
+          <input type="text" name="expPlaceE" placeholder="Where was the experience" required>
+
+          <label for="expDateE">Experience Date (optional)</label>
+          <input type="date" name="expDateE" placeholder="Enter the date of the experience">
+
+          <input type="submit" name="sendButton" value="Modify Experience">
         </form>
       </div>
     </section>

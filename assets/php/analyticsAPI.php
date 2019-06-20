@@ -54,4 +54,25 @@ function getFirstProfileId($analytics) {
     throw new Exception('No accounts found for this user.');
   }
 }
+
+function getResults($analytics, $profileId, $metric) {
+   return $analytics->data_ga->get(
+	'ga:' . $profileId, // Précise le profil Google Analytics à utiliser
+	'30daysAgo', // Précise la date de début
+	'today', // Précise la date de fin
+	'ga:'.$metric // Précise le métrique utilisé (session, users...)
+   );
+}
+
+function printResults($results) {
+    if (count($results->getRows()) > 0) {
+    	$rows = $results->getRows();
+	$valeur = $rows[0][0];
+	return $valeur;
+  } else {
+	return "Pas de résultat.\n";
+  }
+}
+
+$results = getResults($analytics, $profile, 'users'); // Récupère le nombre d'utilisateurs des 30 derniers jours
 ?>

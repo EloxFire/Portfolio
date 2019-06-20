@@ -1,18 +1,20 @@
 <?php
 $parameters = parse_ini_file('../../db.ini');
 
-try {
+try{
+  //CONNEXION VIA PDO
   $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
   $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  if(isset($_POST['projectName']) && isset($_POST['projectLanguage'])) {
+  if(isset($_POST['projectNameD'])) {
 
-    $stmt = $connect->prepare("INSERT INTO projets(name, description, lang)  VALUES (?,?,?)");
-    $stmt->execute(array(strtolower($_POST['projectName']), $_POST['projectDescription'], strtolower($_POST['projectLanguage'])));
+    $stmt = $connect->prepare('DELETE FROM `projets` WHERE `name` = :projet');
+    $stmt->execute(array(":projet" => strtolower($_POST['projectNameD']));
+
     header("location: adminPanel.php#widgetProjectContainer");
     exit;
   }
-} catch (PDOException $e) {
+}catch(PDOException $e){
   echo @"{$e->getMessage()}<br>{$e->getCode()}<br>";
 }
 ?>
