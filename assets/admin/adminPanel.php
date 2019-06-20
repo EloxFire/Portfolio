@@ -6,14 +6,24 @@ ini_set('display_errors', TRUE);
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <link rel="stylesheet" href="../../main.css">
-  <link rel="stylesheet" href="../css/adminPanel.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/scroll.js"></script>
-  <link rel="shortcut icon" href="../images/logo.ico">
-  <script src="https://kit.fontawesome.com/f59aae8cd6.js"></script>
-  <meta charset="utf-8">
-  <title>Admin Panel - Enzo Avagliano</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142128409-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142128409-1');
+</script>
+
+<link rel="stylesheet" href="../../main.css">
+<link rel="stylesheet" href="../css/adminPanel.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/scroll.js"></script>
+<link rel="shortcut icon" href="../images/logo.ico">
+<script src="https://kit.fontawesome.com/f59aae8cd6.js"></script>
+<meta charset="utf-8">
+<title>Admin Panel - Enzo Avagliano</title>
 </head>
 <body>
   <?php

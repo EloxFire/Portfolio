@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <link rel="stylesheet" href="main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/js/scroll.js"></script>
-  <script type="text/javascript" src="assets/js/filterScript.js"></script>
-  <meta charset="utf-8">
-  <link rel="shortcut icon" href="assets/images/logo.ico">
-  <title>Enzo Avagliano - Homepage.</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142128409-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142128409-1');
+</script>
+
+<link rel="stylesheet" href="main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/scroll.js"></script>
+<script type="text/javascript" src="assets/js/filterScript.js"></script>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="assets/images/logo.ico">
+<title>Enzo Avagliano - Homepage.</title>
 </head>
 <body onload="filterSelection('all')">
   <header>
