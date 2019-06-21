@@ -18,6 +18,12 @@
 <title>Curriculum vitae - Enzo Avagliano</title>
 </head>
 <body>
+  <?php
+  //CONNEXION A LA BDD AFIN DE RECUP LES INFOS
+  // $parameters = parse_ini_file('../../db.ini');
+  // $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
+  // $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  ?>
   <main>
     <?php include '../php/menuCV.php' ?>
     <section id="cvContainer">
@@ -33,27 +39,71 @@
         <div class="competences">
           <div class="general">
             <h1 style="font-size: 2em; letter-spacing: 2px">Skills</h1>
-            <p>HTML</p>
-            <progress value="80" max="100"></progress>
-            <p>CSS</p>
-            <progress value="80" max="100"></progress>
-            <p>JAVASCRIPT</p>
-            <progress value="40" max="100"></progress>
-            <p>JAVA</p>
-            <progress value="30" max="100"></progress>
-            <p>ADOBE SERIE</p>
-            <progress value="70" max="100"></progress>
-            <p>OFFICE SERIE</p>
-            <progress value="80" max="100"></progress>
+
+            <?php
+            $parameters = parse_ini_file('../../db.ini');
+            $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $connect->prepare('SELECT `value` FROM `competences` WHERE `cat` = "dev"');
+            $stmt2 = $connect->prepare('SELECT `nom` FROM `competences` WHERE `cat` = "dev"');
+            $stmt->execute();
+            $stmt2->execute();
+            $tabulation = [];
+
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                $n = $stmt2->fetchColumn();
+                echo "<p>$n</p>";
+                echo "<progress value='$val' max='100'></progress>";
+              }
+            }
+            ?>
           </div>
           <div class="languages">
             <h1 style="font-size: 2em; letter-spacing: 2px">Languages</h1>
-            <p>FRENCH</p>
-            <progress value="95" max="100"></progress>
-            <p>ENGLISH</p>
-            <progress value="90" max="100"></progress>
-            <p>ITALIAN</p>
-            <progress value="40" max="100"></progress>
+            <?php
+            $parameters = parse_ini_file('../../db.ini');
+            $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $connect->prepare('SELECT `value` FROM `competences` WHERE `cat` = "lang"');
+            $stmt2 = $connect->prepare('SELECT `nom` FROM `competences` WHERE `cat` = "lang"');
+            $stmt->execute();
+            $stmt2->execute();
+            $tabulation = [];
+
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                $n = $stmt2->fetchColumn();
+                echo "<p>$n</p>";
+                echo "<progress value='$val' max='100'></progress>";
+              }
+            }
+            ?>
+          </div>
+          <div class="software">
+            <h1 style="font-size: 2em; letter-spacing: 2px">Softwares</h1>
+
+            <?php
+            $parameters = parse_ini_file('../../db.ini');
+            $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $connect->prepare('SELECT `value` FROM `competences` WHERE `cat` = "software"');
+            $stmt2 = $connect->prepare('SELECT `nom` FROM `competences` WHERE `cat` = "software"');
+            $stmt->execute();
+            $stmt2->execute();
+            $tabulation = [];
+
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                $n = $stmt2->fetchColumn();
+                echo "<p>$n</p>";
+                echo "<progress value='$val' max='100'></progress>";
+              }
+            }
+            ?>
           </div>
         </div>
 

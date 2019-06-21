@@ -8,9 +8,10 @@ try {
   if(isset($_POST['compName']) && isset($_POST['compValue'])) {
     $comp = $_POST['compName'];
     $percent = $_POST['compValue'];
+    $cat = $_POST['compCat'];
 
-    $stmt = $connect->prepare("INSERT INTO competences(nom, value)  VALUES(?,?)");
-    $stmt->execute([strtolower($comp),$percent]);
+    $stmt = $connect->prepare("INSERT INTO competences(nom, value, cat)  VALUES(?,?,?)");
+    $stmt->execute([strtolower($comp),$percent,strtolower($cat)]);
     header("location: adminPanel.php#widgetCvContainer");
     exit;
   }

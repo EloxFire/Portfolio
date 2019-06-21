@@ -6,12 +6,12 @@ try{
   $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
   $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  if(isset($_POST['projectNameD'])) {
+  if(isset($_POST['expNameD'])) {
 
-    $stmt = $connect->prepare('DELETE FROM `projets` WHERE `name` = :projet');
-    $stmt->execute(array(":projet" => strtolower($_POST['projectNameD'])));
+    $stmt = $connect->prepare('DELETE FROM `experiences` WHERE `nom` = :name');
+    $stmt->execute(array(":name" => strtolower($_POST['expNameD'])));
 
-    header("location: adminPanel.php#widgetProjectContainer");
+    header("location: adminPanel.php#widgetExpContainer");
     exit;
   }
 }catch(PDOException $e){

@@ -9,7 +9,7 @@ try{
   if(isset($_POST['compNameD'])) {
 
     $stmt = $connect->prepare('DELETE FROM `competences` WHERE `nom` = :comp');
-    $stmt->execute(array(":comp" => strtolower($_POST['compNameD']));
+    $stmt->execute(array(":comp" => strtolower($_POST['compNameD'])));
 
     header("location: adminPanel.php#widgetCvContainer");
     exit;

@@ -1,7 +1,7 @@
 <?php
 session_start();
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', TRUE);
+// ini_set('error_reporting', E_ALL);
+// ini_set('display_errors', TRUE);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -35,6 +35,7 @@ ini_set('display_errors', TRUE);
 
     <div class="navbar">
       <h1 class="adminPanelTitle"><i class="fas fa-users-cog"></i> Welcome <?php echo $_SESSION['login'];?> !</h1>
+      <a style="float:right;color:#fff;margin-top:-20px;" href="../../index.php"><i class="fas fa-sign-out-alt"></i> Log-out</a>
     </div>
 
     <div class="sidenav">
@@ -152,8 +153,11 @@ ini_set('display_errors', TRUE);
           <label for="compName">Competence name</label><span class="required">*</span>
           <input type="text" name="compName" placeholder="Name of the competence goes here" required>
 
-          <label for="compValue">Velue</label><span class="required">*</span>
+          <label for="compValue">Value</label><span class="required">*</span>
           <input type="number" name="compValue" placeholder="Value in percent" required>
+
+          <label for="compCat">Categorie (dev, lang or software)</label><span class="required">*</span>
+          <input type="text" name="compCat" placeholder="Competene categorie" required>
 
           <input type="submit" name="sendButton" value="Add competence">
         </form>
@@ -177,14 +181,17 @@ ini_set('display_errors', TRUE);
             ?>
           </select>
 
-          <label for="compValueE">value</label>
+          <label for="compValueE">Value</label>
           <input type="number" name="compValueE" placeholder="Enter the value of the competence">
+
+          <label for="compCatE">Categorie (dev, lang or software)</label><span class="required">*</span>
+          <input type="text" name="compCatE" placeholder="Competene categorie" required>
 
           <input type="submit" name="sendButton" value="Modify competence">
         </form>
       </div>
 
-      <div class="widget-by2" style="margin-top: -22em;">
+      <div class="widget-by2" style="margin-top: -18em;">
         <h1 class="widgetTitle"><i class="fas fa-trash-alt"></i> Delete a competence</h1>
 
 
@@ -212,7 +219,7 @@ ini_set('display_errors', TRUE);
       <div id="widgetCV" class="widget-by2" style="margin-top: 8em;">
         <h1 class="widgetTitle"><i class="fas fa-plus"></i> Add an experience</h1>
 
-        <form class="expFormAdd" action="../admin/compAdd.php" method="post">
+        <form class="expFormAdd" action="expAdd.php" method="post">
           <label for="expName">Experience name</label><span class="required">*</span>
           <input type="text" name="expName" placeholder="Enter the experience name here" required>
 
@@ -232,11 +239,19 @@ ini_set('display_errors', TRUE);
       <div class="widget-by2" style="margin-top: 8em;">
         <h1 class="widgetTitle"><i class="fas fa-edit"></i> Edit an experience</h1>
 
-        <form class="expFormEdit" action="../admin/compAdd.php" method="post">
+        <form class="expFormEdit" action="expChange.php" method="post">
           <label for="expNameE">Experience</label><span class="required">*</span>
           <select name="expNameE">
-            <option value="html">VAMO</option>
-
+            <?php
+            $stmt = $connect->prepare('SELECT `nom` FROM `experiences`');
+            $stmt->execute();
+            $tabulation = [];
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                echo "<option name='$val'>$val</option>";
+              }
+            }
+            ?>
           </select>
 
           <label for="expDescriptionE">Experience description (optional)</label>
@@ -249,6 +264,29 @@ ini_set('display_errors', TRUE);
           <input type="date" name="expDateE" placeholder="Enter the date of the experience">
 
           <input type="submit" name="sendButton" value="Modify Experience">
+        </form>
+      </div>
+
+      <div class="widget-by2" style="margin-top: -12em;">
+        <h1 class="widgetTitle"><i class="fas fa-trash-alt"></i> Delete an experience</h1>
+
+
+        <form class="cvFormDel" action="expDel.php" method="post">
+          <label for="expNameD">Experience name</label><span class="required">*</span>
+          <select name="expNameD">
+            <?php
+            $stmt = $connect->prepare('SELECT `nom` FROM `experiences`');
+            $stmt->execute();
+            $tabulation = [];
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                echo "<option name='$val'>$val</option>";
+              }
+            }
+            ?>
+          </select>
+
+          <input type="submit" name="sendButton" value="Delete experience">
         </form>
       </div>
     </section>

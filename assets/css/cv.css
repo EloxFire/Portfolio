@@ -55,15 +55,16 @@
 
 .competences{
   display: flex;
-  margin-left: 20px;
+  flex-wrap: wrap;
   flex-direction: row;
+  margin-left: 20px;
 }
 .competences p{
   color: #B52F17;
   letter-spacing: 2px;
   font-size: 1.5em;
 }
-.general, .languages{
+.general, .languages, .software{
   margin-top: 4vh;
   color: #282c34;
 }
