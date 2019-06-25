@@ -1,7 +1,7 @@
 # README
 
 ### Portfolio | Final Release
-###### **Github Link : https://github.com/EloxFire/YnovPortfolio**
+###### **Github Link : https://github.com/EloxFire/Portfolio**
 ###### **Owner : [Enzo Avagliano](https://github.com/EloxFire)**
 ###### **Project date : 2019**
 ---
