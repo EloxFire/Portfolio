@@ -25,7 +25,7 @@ session_start();
   <meta charset="utf-8">
   <title>Admin Panel - Enzo Avagliano</title>
 </head>
-<body>
+<body class="noScrolling">
   <?php
   $parameters = parse_ini_file('../../db.ini');
   $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
@@ -35,7 +35,7 @@ session_start();
 
     <div class="navbar">
       <h1 class="adminPanelTitle"><i class="fas fa-users-cog"></i> Welcome <?php echo $_SESSION['login'];?> !</h1>
-      <a style="float:right;color:#fff;margin-top:-20px;" href="../../index.php"><i class="fas fa-sign-out-alt"></i> Log-out</a>
+      <a style="float:right;color:#fff;margin-top:-40px;margin-right:2em;" href="deconexion.php"><i class="fas fa-sign-out-alt"></i> Log-out</a>
     </div>
 
     <div class="sidenav">
@@ -46,15 +46,67 @@ session_start();
     </div>
 
     <section id="widgetGeneralContainer">
-      <div id="widgetGeneral" class="widget-by2" style="margin-top: 8em;">
-        <h1 class="widgetTitle"><i class="fas fa-chart-line"></i> Realtime Trafic</h1>
-        <?php
-        echo $results;
-        ?>
+      <div id="widgetGeneral" class="widget-by2" style="height:26vh;border:1px solid #000;border-radius:10px;margin-top: 8em;">
+        <h1 class="widgetTitle"><i class="fas fa-envelope"></i> Latest Messages</h1>
+        <div class="scrollable-messages" style="height:20vh;overflow:auto;">
+          <?php
+          $stmt = $connect->prepare('SELECT `name` FROM `messages` ORDER BY `id` DESC LIMIT 5');
+          $stmt2 = $connect->prepare('SELECT `message` FROM `messages` ORDER BY `id` DESC LIMIT 5');
+          $stmt->execute();
+          $stmt2->execute();
+
+          while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+            $message = $stmt2->fetchColumn();
+            foreach($ligne as $val){
+              echo "<h3 style='margin-left:5px;'>$val</h3>";
+              echo "<p style='margin-left:20px;'>$message</p>";
+              echo "<br>";
+            }
+          }
+          ?>
+        </div>
       </div>
 
-      <div class="widget-by2" style="margin-top: 8em;">
-        <h1 class="widgetTitle"><i class="fas fa-chart-line"></i> Realtime Trafic</h1>
+      <div class="widget-by2" style="height:26vh;border:1px solid #000;border-radius:10px;margin-top: 8em;">
+        <h1 class="widgetTitle"><i class="fas fa-info"></i> General informations</h1>
+
+        <div style="display:flex;flex-xrap:wrap;justify-content:center;">
+          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-envelope"></i> Messages :
+            <?php
+            $stmt = $connect->prepare("SELECT COUNT(*) AS n FROM messages");
+            $stmt->execute();
+            $number = $stmt->fetch();
+            echo $number['n'];
+            ?>
+          </p>
+
+          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-briefcase"></i> Competences :
+            <?php
+            $stmt = $connect->prepare("SELECT COUNT(*) AS n FROM competences");
+            $stmt->execute();
+            $number = $stmt->fetch();
+            echo $number['n'];
+            ?>
+          </p>
+
+          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-flask"></i> Professional experiences :
+            <?php
+            $stmt = $connect->prepare("SELECT COUNT(*) AS n FROM experiences");
+            $stmt->execute();
+            $number = $stmt->fetch();
+            echo $number['n'];
+            ?>
+          </p>
+
+          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-project-diagram"></i> Projects :
+            <?php
+            $stmt = $connect->prepare("SELECT COUNT(*) AS n FROM projets");
+            $stmt->execute();
+            $number = $stmt->fetch();
+            echo $number['n'];
+            ?>
+          </p>
+        </div>
       </div>
     </section>
 

@@ -66,7 +66,7 @@
 
     <div class="intro">
       <p>
-        Yes, since I started to code, I did several projects, which are for some completed and for the other in a "paused" statut.<br>
+        Since I started to code, I did several projects, which are for some completed and for the other in a "paused" statut.<br>
         Here, you got a list and the details of those projects.
       </p>
     </div>
@@ -101,7 +101,7 @@
       </div>
       <div class="filterDiv arduino cuitepates less">
         <h3>Cuitépâtes</h3>
-        <div class="separatorCard"></div>
+      <div class="separatorCard"></div>
         <p>
           Project type :<br>
           Utils<br>

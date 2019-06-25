@@ -4,9 +4,11 @@
 *{
 padding: 0;
 margin: 0;
-overflow: hidden;
 }
 
+.noScrolling{
+  overflow: hidden;
+}
 .navbar {
   overflow: hidden;
   background-color: #282c34;

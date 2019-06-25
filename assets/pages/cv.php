@@ -18,12 +18,6 @@
 <title>Curriculum vitae - Enzo Avagliano</title>
 </head>
 <body>
-  <?php
-  //CONNEXION A LA BDD AFIN DE RECUP LES INFOS
-  // $parameters = parse_ini_file('../../db.ini');
-  // $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
-  // $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  ?>
   <main>
     <?php include '../php/menuCV.php' ?>
     <section id="cvContainer">
@@ -32,7 +26,7 @@
           <img src="../images/Social/cvpp.png" alt="Enzo Avagliano Profile Picture">
           <div class="titleContainerCV">
             <h1 class="nameTitle">Enzo Avagliano</h1>
-            <p class="statusTitle">étudiant - Developpeur</p>
+            <p class="statusTitle">Student - Developper</p>
           </div>
         </div>
 
@@ -108,7 +102,7 @@
         </div>
 
         <div class=".adminButtonDiv">
-          <a href="connexionPage.php">Modify cv</a>
+          <a href="connexionPage.php" class="modifyCV">Modify cv</a>
         </div>
       </div>
 
