@@ -10,9 +10,10 @@ try {
     $place = $_POST['expPlace'];
     $desc = $_POST['expDescription'];
     $xdate = $_POST['expDate'];
+    $grade = $_POST['expGrade'];
 
-    $stmt = $connect->prepare("INSERT INTO experiences(nom, description, lieu, xp_date)  VALUES(?,?,?,?)");
-    $stmt->execute([strtolower($name),strtolower($desc), strtolower($place), $xdate]);
+    $stmt = $connect->prepare("INSERT INTO experiences(nom, grade, description, lieu, xp_date)  VALUES(?,?,?,?,?)");
+    $stmt->execute([strtolower($name), strtolower($grade), strtolower($desc), strtolower($place), $xdate]);
     header("location: adminPanel.php#widgetExpContainer");
     exit;
   }

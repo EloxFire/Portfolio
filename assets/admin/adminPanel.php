@@ -111,7 +111,7 @@ session_start();
     </section>
 
     <section id="widgetProjectContainer">
-      <div id="widgetProjectAdd" class="widget-by2" style="margin-top: 8em;">
+      <div id="widgetProjectAdd" class="widget-by2" style="margin-top: 6em;">
         <h1 class="widgetTitle"><i class="fas fa-plus"></i> Add a project</h1>
 
         <form class="projectFormAdd" action="../admin/projectAdd.php" method="post">
@@ -124,14 +124,20 @@ session_start();
           <label for="projectLanguage">Project language</label><span class="required">*</span>
           <input type="text" name="projectLanguage" placeholder="Enter the project language" required>
 
-          <label for="projectImage">Project image (optional)</label>
-          <input type="file" name="projectImage" placeholder="Post a project image here">
+          <label for="projectType">Project type</label>
+          <input type="text" name="projectType" placeholder="Enter the project type (Game, utils...)">
+
+          <label for="projectApplication">Project application</label>
+          <input type="text" name="projectApplication" placeholder="Enter the project application (Life simplification for exemple)">
+
+          <label for="projectUrl">Project url</label>
+          <input type="text" name="projectUrl" placeholder="Ex: assets/pages/project">
 
           <input type="submit" name="sendButton" value="Add project">
         </form>
       </div>
 
-      <div class="widget-by2" style="margin-top: 8em;">
+      <div class="widget-by2" style="margin-top: 6em;">
         <h1 class="widgetTitle"><i class="fas fa-edit"></i> Edit a project</h1>
 
         <form class="projectFormEdit" action="projectChange.php" method="post">
@@ -166,14 +172,20 @@ session_start();
             ?>
           </select>
 
-          <label for="projectImage">Project image (optional)</label>
-          <input type="file" name="projectImageE" placeholder="Post a project image">
+          <label for="projectTypeE">Project type</label><span class="required">*</span>
+          <input type="text" name="projectTypeE" placeholder="Enter the project type (Game, utils...)" required>
+
+          <label for="projectApplicationE">Project application</label><span class="required">*</span>
+          <input type="text" name="projectApplicationE" placeholder="Enter the project application (Life simplification for exemple)" required>
+
+          <label for="projectUrlE">Project url</label>
+          <input type="text" name="projectUrlE" placeholder="Ex: assets/pages/project">
 
           <input type="submit" name="sendButton" value="Modify project">
         </form>
       </div>
 
-      <div class="widget-by2" style="margin-top: -15em;">
+      <div class="widget-by2">
         <h1 class="widgetTitle"><i class="fas fa-trash-alt"></i> Delete a project</h1>
 
 
@@ -275,6 +287,9 @@ session_start();
           <label for="expName">Experience name</label><span class="required">*</span>
           <input type="text" name="expName" placeholder="Enter the experience name here" required>
 
+          <label for="expName">Experience grade</label><span class="required">*</span>
+          <input type="text" name="expGrade" placeholder="Enter the experience grade time here" required>
+
           <label for="expDescription">Experience description (optional)</label>
           <textarea name="expDescription" placeholder="Enter the experience description here" rows="8" cols="80"></textarea>
 
@@ -305,6 +320,9 @@ session_start();
             }
             ?>
           </select>
+
+          <label for="expGradeE">Experience grade</label><span class="required">*</span>
+          <input type="text" name="expGradeE" placeholder="Enter the experience grade time here" required>
 
           <label for="expDescriptionE">Experience description (optional)</label>
           <textarea name="expDescriptionE" placeholder="Enter the experience description here" rows="8" cols="80"></textarea>

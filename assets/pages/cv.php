@@ -111,6 +111,25 @@
           <h1 class="sectionTitleCV"><i class="fas fa-caret-right"></i>Professional Experience</h1>
           <p class="sectionParaCV"><i class="fas fa-caret-right"></i>Internship observation | Middle School<br>VAMO OUTILLAGE - Help on diferents tasks and shipping</p>
           <p class="dateCV">Summer 2015</p>
+          <?php
+          $parameters = parse_ini_file('../../db.ini');
+          $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
+          $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+          $stmt = $connect->prepare('SELECT `title` FROM `competences` WHERE `cat` = "software"');
+          $stmt2 = $connect->prepare('SELECT `nom` FROM `competences` WHERE `cat` = "software"');
+          $stmt->execute();
+          $stmt2->execute();
+          $tabulation = [];
+
+          while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+            foreach($ligne as $val){
+              $n = $stmt2->fetchColumn();
+              echo "<p>$n</p>";
+              echo "<progress value='$val' max='100'></progress>";
+            }
+          }
+          ?>
         </div>
         <div class="upright">
           <h1 class="sectionTitleCV"><i class="fas fa-caret-right"></i>Studies</h1>

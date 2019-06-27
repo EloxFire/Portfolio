@@ -8,10 +8,13 @@ try{
 
   if(isset($_POST['projectNameE']) && isset($_POST['projectLanguageE'])) {
 
-    $stmt = $connect->prepare('UPDATE `projets` SET `name` = :name, `description` = :description, `lang` = :lang WHERE `name` = :name');
+    $stmt = $connect->prepare('UPDATE `projets` SET `name` = :name, `description` = :description, `lang` = :lang, `type` = :type, `application` = :app, `page_url` = :url WHERE `name` = :name');
     $stmt->execute(array(":name" => strtolower($_POST['projectNameE']),
     ":description" => strtolower($_POST['projectDescriptionE']),
-    ":lang" => strtolower($_POST['projectLanguageE'])));
+    ":lang" => strtolower($_POST['projectLanguageE']),
+    ":type" => strtolower($_POST['projectTypeE']),
+    ":app" => strtolower($_POST['projectTypeE']),
+    ":url" => $_POST['projectUrlE']));
 
     header("location: adminPanel.php#widgetProjectContainer");
     exit;

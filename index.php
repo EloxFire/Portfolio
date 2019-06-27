@@ -20,6 +20,11 @@
 <title>Enzo Avagliano - Homepage.</title>
 </head>
 <body onload="filterSelection('all')">
+  <?php
+  $parameters = parse_ini_file('db.ini');
+  $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
+  $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  ?>
   <header>
     <div class="titleContainer">
       <h1 class="boxedHeader">Welcome.</h1>
@@ -71,107 +76,39 @@
       </p>
     </div>
 
-    <div class="filterContainer">
-      <h1 class="secondSectionTitle">Filter projects by :</h1>
-      <div class="separatorSecond"></div>
-      <div id="filtersButtonContainer">
-        <a class="btnFilter" onclick="filterSelection('all')">Show all</a>
-        <a class="btnFilter" onclick="filterSelection('java')">Java</a>
-        <a class="btnFilter" onclick="filterSelection('cProject')">C/C#/C++</a>
-        <a class="btnFilter" onclick="filterSelection('html')">HTML/CSS</a>
-        <a class="btnFilter" onclick="filterSelection('arduino')">Arduino</a>
-        <a class="btnFilter" onclick="filterSelection('processing')">Processing</a>
-      </div>
-    </div>
-
     <div class="container">
-      <div class="filterDiv java tdk less">
-        <h3>Terre du Kill</h3>
-        <div class="separatorCard"></div>
-        <p>
-          Project type :<br>
-          MiniGame<br>
-          Language :<br>
-          Java<br>
-          Application :<br>
-          In-game modifications
-        </p>
-        <div class="separatorCard"></div>
-        <p class="seeMore"><a href="assets/pages/tdk.php">See more</a></p>
-      </div>
-      <div class="filterDiv arduino cuitepates less">
-        <h3>Cuitépâtes</h3>
-      <div class="separatorCard"></div>
-        <p>
-          Project type :<br>
-          Utils<br>
-          Language :<br>
-          Arduino<br>
-          Application :<br>
-          Life simplification
-        </p>
-        <div class="separatorCard"></div>
-        <p class="seeMore"><a href="assets/pages/cuitepates.php">See more</a></p>
-      </div>
+      <?php
+      $name = $connect->prepare('SELECT `name` FROM `projets`');
+      $lang = $connect->prepare('SELECT `lang` FROM `projets`');
+      $type = $connect->prepare('SELECT `type` FROM `projets`');
+      $application = $connect->prepare('SELECT `application` FROM `projets`');
+      $url = $connect->prepare('SELECT `page_url` FROM `projets`');
+      $name->execute();
+      $lang->execute();
+      $type->execute();
+      $application->execute();
+      $url->execute();
 
-      <div class="filterDiv arduino lockit less">
-        <h3>Lock!t</h3>
-        <div class="separatorCard"></div>
-        <p>
-          Project type :<br>
-          Utils<br>
-          Language :<br>
-          Arduino/MIT app inventor<br>
-          Application :<br>
-          Life simplification
-        </p>
-        <div class="separatorCard"></div>
-        <p class="seeMore"><a href="assets/pages/lockit.php">See more</a></p>
-      </div>
-
-      <div class="filterDiv processing snake less">
-        <h3>Snake</h3>
-        <div class="separatorCard"></div>
-        <p>
-          Project type :<br>
-          Game<br>
-          Language :<br>
-          Processing<br>
-          Application :<br>
-          Remake the mobile game Snake
-        </p>
-        <div class="separatorCard"></div>
-        <p class="seeMore"><a href="assets/pages/snake.php">See more</a></p>
-      </div>
-
-      <div class="filterDiv processing systemexe less">
-        <h3>System.exe</h3>
-        <div class="separatorCard"></div>
-        <p>
-          Project type :<br>
-          Game<br>
-          Language :<br>
-          Processing<br>
-          Application :<br>
-          'Asteroid' like 2D game
-        </p>
-        <div class="separatorCard"></div>
-        <p class="seeMore"><a href="assets/pages/system.php">See more</a></p>
-      </div>
-      <div class="filterDiv html portfolio less">
-        <h3>My Portfolio</h3>
-        <div class="separatorCard"></div>
-        <p>
-          Project type :<br>
-          Website<br>
-          Language :<br>
-          HTML/CSS/JS<br>
-          Application :<br>
-          professional visibility
-        </p>
-        <div class="separatorCard"></div>
-        <p class="seeMore"><a href="assets/pages/portfolio.php">See more</a></p>
-      </div>
+      while($ligne = $name->fetch(PDO::FETCH_NUM)){
+        $projectLanguage = $lang->fetchColumn();
+        $projectType = $type->fetchColumn();
+        $projectApplication = $application->fetchColumn();
+        $projectUrl = $url->fetchColumn();
+        foreach($ligne as $projectName){
+          echo "<div class='filterDiv java tdk less'>";
+          echo "<h3>$projectName</h3>";
+          echo "<div class='separatorCard'></div>";
+          echo "<p>
+          Project language :<br>$projectLanguage<br>
+          Project type :<br>$projectType<br>
+          Project application :<br>$projectApplication</p>";
+          echo "<br>";
+          echo "<div class='separatorCard'></div>";
+          echo "<p class='seeMore'><a href='$projectUrl.php'>See more</a></p>";
+          echo "</div>";
+        }
+      }
+      ?>
     </div>
   </section>
 
