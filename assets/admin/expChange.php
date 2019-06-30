@@ -8,7 +8,7 @@ try{
 
   if(isset($_POST['expNameE']) && isset($_POST['expPlaceE'])) {
 
-    $stmt = $connect->prepare('UPDATE `experiences` SET `grade` = :grade, `description` = :description, `lieu` = :place, `date` = :xdate WHERE `nom` = :name');
+    $stmt = $connect->prepare('UPDATE `experiences` SET `grade` = :grade, `description` = :description, `lieu` = :place, `xp_date` = :xdate WHERE `nom` = :name');
     $stmt->execute(array(":name" => strtolower($_POST['expNameE']), ":grade" => strtolower($_POST['expGradeE']), ":description" => strtolower($_POST['expDescriptionE']), ":lieu" => strtolower($_POST['expPlaceE']), ":xdate" => $_POST['expDateE']));
 
     header("location: adminPanel.php#widgetExpContainer");

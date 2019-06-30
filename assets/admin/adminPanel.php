@@ -71,7 +71,7 @@ session_start();
         <h1 class="widgetTitle"><i class="fas fa-info"></i> General informations</h1>
 
         <div style="display:flex;flex-xrap:wrap;justify-content:center;">
-          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-envelope"></i> Messages :
+          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-envelope"></i> Messages :<br>
             <?php
             $stmt = $connect->prepare("SELECT COUNT(*) AS n FROM messages");
             $stmt->execute();
@@ -80,7 +80,7 @@ session_start();
             ?>
           </p>
 
-          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-briefcase"></i> Competences :
+          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-briefcase"></i> Competences :<br>
             <?php
             $stmt = $connect->prepare("SELECT COUNT(*) AS n FROM competences");
             $stmt->execute();
@@ -89,7 +89,7 @@ session_start();
             ?>
           </p>
 
-          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-flask"></i> Professional experiences :
+          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-flask"></i> Professional experiences :<br>
             <?php
             $stmt = $connect->prepare("SELECT COUNT(*) AS n FROM experiences");
             $stmt->execute();
@@ -98,7 +98,7 @@ session_start();
             ?>
           </p>
 
-          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-project-diagram"></i> Projects :
+          <p style="font-size:1.5em;margin:12px;"><i class="fas fa-project-diagram"></i> Projects :<br>
             <?php
             $stmt = $connect->prepare("SELECT COUNT(*) AS n FROM projets");
             $stmt->execute();
@@ -296,8 +296,8 @@ session_start();
           <label for="expPlace">Experience place</label><span class="required">*</span>
           <input type="text" name="expPlace" placeholder="Where was the experience" required>
 
-          <label for="expDate">Experience Date (optional)</label>
-          <input type="date" name="expDate" placeholder="Enter the date of the experience">
+          <label for="expDate">Experience Date</label>
+          <input type="text" name="expDate" placeholder="Enter the date of the experience">
 
           <input type="submit" name="sendButton" value="Add Experience">
         </form>
@@ -330,14 +330,14 @@ session_start();
           <label for="expPlaceE">Experience place</label><span class="required">*</span>
           <input type="text" name="expPlaceE" placeholder="Where was the experience" required>
 
-          <label for="expDateE">Experience Date (optional)</label>
-          <input type="date" name="expDateE" placeholder="Enter the date of the experience">
+          <label for="expDateE">Experience Date</label>
+          <input type="text" name="expDateE" placeholder="Enter the date of the experience">
 
           <input type="submit" name="sendButton" value="Modify Experience">
         </form>
       </div>
 
-      <div class="widget-by2" style="margin-top: -12em;">
+      <div class="widget-by2" style="margin-top: -6em;">
         <h1 class="widgetTitle"><i class="fas fa-trash-alt"></i> Delete an experience</h1>
 
 

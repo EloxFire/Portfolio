@@ -109,27 +109,35 @@
       <div id="right">
         <div class="upleft">
           <h1 class="sectionTitleCV"><i class="fas fa-caret-right"></i>Professional Experience</h1>
-          <p class="sectionParaCV"><i class="fas fa-caret-right"></i>Internship observation | Middle School<br>VAMO OUTILLAGE - Help on diferents tasks and shipping</p>
-          <p class="dateCV">Summer 2015</p>
-          <?php
-          $parameters = parse_ini_file('../../db.ini');
-          $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
-          $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          <div style="height:35vh;overflow:auto;">
+            <?php
+            $parameters = parse_ini_file('../../db.ini');
+            $connect = new PDO($parameters['host'], $parameters['user'], $parameters['pass']);
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-          $stmt = $connect->prepare('SELECT `title` FROM `competences` WHERE `cat` = "software"');
-          $stmt2 = $connect->prepare('SELECT `nom` FROM `competences` WHERE `cat` = "software"');
-          $stmt->execute();
-          $stmt2->execute();
-          $tabulation = [];
+            $stmt = $connect->prepare('SELECT `nom` FROM `experiences`');
+            $stmt2 = $connect->prepare('SELECT `grade` FROM `experiences`');
+            $stmt3 = $connect->prepare('SELECT `description` FROM `experiences`');
+            $stmt4 = $connect->prepare('SELECT `xp_date` FROM `experiences`');
+            $stmt5 = $connect->prepare('SELECT `lieu` FROM `experiences`');
+            $stmt->execute();
+            $stmt2->execute();
+            $stmt3->execute();
+            $stmt4->execute();
+            $stmt5->execute();
 
-          while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
-            foreach($ligne as $val){
-              $n = $stmt2->fetchColumn();
-              echo "<p>$n</p>";
-              echo "<progress value='$val' max='100'></progress>";
+            while($ligne = $stmt->fetch(PDO::FETCH_NUM)){
+              foreach($ligne as $val){
+                $grade = $stmt2->fetchColumn();
+                $desc = $stmt3->fetchColumn();
+                $d = $stmt4->fetchColumn();
+                $place = $stmt5->fetchColumn();
+                echo "<p class='sectionParaCV'><i class='fas fa-caret-right'></i> $val | $grade<br>$desc</p>";
+                echo "<p class='dateCV'>$d - $place</p>";
+              }
             }
-          }
-          ?>
+            ?>
+          </div>
         </div>
         <div class="upright">
           <h1 class="sectionTitleCV"><i class="fas fa-caret-right"></i>Studies</h1>

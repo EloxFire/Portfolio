@@ -9,7 +9,7 @@ try {
   $stmt = $connect->prepare("INSERT INTO messages(name, message, mail) VALUES (?, ?, ?)");
   $stmt->execute(array($_POST['name'], $_POST['message'], $_POST['mail'])); //ON EXECUTE NOTRE REQUETTE PRECEDEMENT PREPAREE
   header('location: ../../index.php#contact');
-  $message = "<h1 style='text-decoration: underline'>Nouveau mesasge !</h1><br>$_POST['message'];"
+  $message = $_POST['message'];
 
   $headers = "Mail : ".$_POST['mail']."";
   $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
